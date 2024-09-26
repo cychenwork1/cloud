@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="server_test_html/css/myall.css">
+    <style>
+        .section01 {
+            height: 95vh;
+            position: relative;
+        }
+
+        .box001 {
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            top: 0;
+            left: 0;
+        }
+
+        .box002 {
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            top: 0;
+            right: 0;
+        }
+
+        .box003 {
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            bottom: 0;
+            left: 0;
+        }
+
+        .box004 {
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            bottom: 0;
+            right: 0;
+        }
+
+        .logo {
+            position: absolute;
+            top: 30px;
+            bottom: 30px;
+            left: 30px;
+            right: 30px;
+            background-image: url(server_test_html/image/pexels-pramodtiwari-13988977.jpg);
+            box-shadow: 5px 5px 10px 4px var(--mycolor04);
+            border-radius: 20px;
+            background-attachment: fixed;
+        }
+
+        .user_text {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.3);
+            color: var(--mycolor53);
+            top: 35%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .user_text h1 {
+            font-size: 48px;
+        }
+
+        .user_text h2 {
+            font-size: 36px;
+        }
+
+        .user_text p {
+            font-size: 28px;
+        }
+
+        .section02 {
+            /* text-align: center; */
+            /* padding: 50px 30px 50px 30px; */
+            border: var(--mytextcolor02) 5px solid;
+            background-color: var(--mycolor53);
+            width: 80%;
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-right: auto;
+            margin-left: auto;
+
+        }
+
+
+        .section02 .s02_box {
+            display: inline-block;
+            width: 32%;
+            border: var(--mycolor04) 2px solid;
+
+
+        }
+
+        .section02 .s02_box .box_in {
+            position: relative;
+            width: 100%;
+            height: auto;
+            background-color: var(--mycolor51);
+            overflow: hidden;
+        }
+
+        .section02 .s02_box .box_in:hover .roller {
+            right: 0;
+            transition: 300ms;
+        }
+
+        .section02 .s02_box .box_in .roller {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            right: -100%;
+            /* left: 0; */
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            color: wheat;
+        }
+
+        .section02 .s02_box .box_in .roller .box_in_text {
+            padding: 15px;
+        }
+
+        .section02 .s02_box .box_in .roller .box_in_text h2,
+        h4 {
+            margin: 10px;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="section01 bg-01">
+        <div class="box001 bg-02"></div>
+        <div class="box002 bg-02"></div>
+        <div class="box003 bg-02"></div>
+        <div class="box004 bg-02"></div>
+        <div class="logo bg-03 bg-cover"> </div>
+        <div class="user_text">
+            <h1>陳正晏個人作品集</h1>
+            <hr>
+            <h2>認真負責</h2>
+            <p>過程問題恐怖，低價一會兒最終默認躺在屬。</p>
+        </div>
+
+    </div>
+    <div class="section02">
+
+        <div class="s02_box">
+            <div class="box_in">
+                <div class="roller">
+                    <a href="http://192.168.10.57/food07" target="_blank" class="bg-btn03">連結</a>
+
+                </div>
+                <div style="background-image: url(server_test_html/image/clay-banks-lQ-m8d0Ww_0-unsplash.jpg);
+                height:200px; background-position: center center; background-size: cover;"></div>
+                <div class="box_in_text">
+                    <h2 style="color: white;">作品001</h2>
+                    <h4 style="color: white;">簡介:wordpress</h4>
+                </div>
+            </div>
+        </div>
+        <div class="s02_box">
+            <div class="box_in">
+                <div class="roller">
+                    <a href="server_test_html/20240604.html" target="_blank" class="bg-btn03">連結</a>
+
+                </div>
+                <div style="background-image: url(server_test_html/image/restaurant-5510672_1280.jpg);
+                height:200px; background-position: center center; background-size: cover;"></div>
+                <div class="box_in_text">
+                    <h2 style="color: white;">作品002</h2>
+                    <h4 style="color: white;">簡介:店家</h4>
+                </div>
+            </div>
+        </div>
+        <div class="s02_box">
+            <div class="box_in">
+                <div class="roller">
+                    <a href="server_test_html/20240701-tour.html" target="_blank" class="bg-btn03">連結</a>
+
+                </div>
+                <div style="background-image: url(server_test_html/image/datingscout-BmfXYrGqKJw-unsplash.jpg);
+                height:200px; background-position: center center; background-size: cover;"></div>
+                <div class="box_in_text">
+                    <h2 style="color: white;">作品003</h2>
+                    <h4 style="color: white;">旅行社</h4>
+                </div>
+            </div>
+        </div>
+        <div class="s02_box">
+            <div class="box_in">
+                <div class="roller">
+                    <a href="server_test_html/20240730%20hotel.html" target="_blank" class="bg-btn03">連結</a>
+
+                </div>
+                <div style="background-image: url(server_test_html/image/vacation/wojciech-portnicki-IJGVSMI_nsw-unsplash.jpg);
+                height:200px; background-position: center center; background-size: cover;"></div>
+                <div class="box_in_text">
+                    <h2 style="color: white;">作品004</h2>
+                    <h4 style="color: white;">一頁式網頁</h4>
+                </div>
+            </div>
+        </div>
+        <div class="s02_box">
+            <div class="box_in">
+                <div class="roller">
+                    <a href="server_test_html/20240604.html" target="_blank" class="bg-btn03">連結</a>
+
+                </div>
+                <div style="background-image: url(server_test_html/image/alexander-schimmeck-39R-s_81wE0-unsplash.jpg);
+                height:200px; background-position: center center; background-size: cover;"></div>
+                <div class="box_in_text">
+                    <h2 style="color: white;">作品005</h2>
+                    <h4 style="color: white;">施工中</h4>
+                </div>
+            </div>
+        </div>
+        <div class="s02_box">
+            <div class="box_in">
+                <div class="roller">
+                    <a href="server_test_html/20240604.html" target="_blank" class="bg-btn03">連結</a>
+
+                </div>
+                <div style="background-image: url(server_test_html/image/alexander-schimmeck-39R-s_81wE0-unsplash.jpg);
+                height:200px; background-position: center center; background-size: cover;"></div>
+                <div class="box_in_text">
+                    <h2 style="color: white;">作品006</h2>
+                    <h4 style="color: white;">施工中</h4>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/myall.css">
+
+</head>
+
+<body>
+
+    <section id="s02" class="bg-dark">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+                <div class="container-fluid">
+                    <i class="fa-solid fa-plane fa-2x  me-2" style="color: #19b3b1;"></i>
+                    <a class="navbar-brand" href="#">
+
+                        測驗
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">首頁</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#s03">關於我們</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    高級vip功能
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item disabled" href="#" id="vip1" target="_blank">功能1</a>
+                                    </li>
+                                    <li><a class="dropdown-item disabled" href="#" id="vip2" target="_blank">功能2</a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item disabled" href="#" id="vip3">功能3</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+
+                        <div>
+
+                            <i class="fa-solid fa-user fa-2x d-none" style="color: rgb(82, 82, 82)" id="fa-user"></i>
+                            <span class="h3 text-success " id="login_hint">會員未登入 </span>
+                            <span class="h3 text-warning d-none" id="s02_login_username"> xxx</span>
+                        </div>
+                        <div>
+                            <button class="btn btn-outline-warning ms-3" data-bs-toggle="modal"
+                                data-bs-target="#loginModal" id="login_btn">登入</button>
+                            <button class="btn btn-success ms-3" data-bs-toggle="modal" data-bs-target="#registerModal"
+                                id="reg_btn">註冊</button>
+                        </div>
+                        <button class="btn btn-success d-none btn-danger ms-3" id="logout_btn">登出</button>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </section>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header text-bg-warning">
+                    <h1 class="modal-title fs-5 fw-900 text-white" id="exampleModalLabel">會員登入</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">帳號</label>
+                        <input type="text" name="username" id="login_username" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">密碼</label>
+                        <input type="password" name="password" id="login_password" class="form-control">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="login_ok_btn">確認</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal 2-->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header text-bg-success">
+                    <h1 class="modal-title fs-5 fw-900 text-white" id="exampleModalLabel">會員註冊</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+
+                        <div class="col-6">
+                            <div class="mb-3">
+                                <label for="reg_username" class="form-label">帳號</label>
+                                <input type="text" name="reg_username" id="reg_username" class="form-control is-invalid"
+                                    placeholder="字數5~10">
+                                <div class="valid-feedback" id="reg_username_msg">符合規定字數5~10</div>
+                                <div class="invalid-feedback" id="reg_username_msg2">不符合規定字數5~10</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="reg_password" class="form-label">密碼</label>
+                                <input type="password" name="reg_password" id="reg_password"
+                                    class="form-control is-invalid" placeholder="字數8~12">
+                                <div class="valid-feedback">符合規定字數8~12</div>
+                                <div class="invalid-feedback">不符合規定字數8~12</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="conf_password" class="form-label">確認密碼</label>
+                                <input type="password" name="conf_password" id="conf_password"
+                                    class="form-control is-invalid" placeholder="確認密碼">
+                                <div class="valid-feedback">密碼相符</div>
+                                <div class="invalid-feedback">密碼不符</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">e-mail</label>
+                                <input type="text" name="email" id="email" class="form-control " placeholder="">
+
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div>
+                                <p>興趣</p>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" name="fav_read" id="fav_read" class="form-check-input">
+                                <label for="">閱讀</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" name="fav_ball" id="fav_ball" class="form-check-input">
+                                <label for="">打球</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" name="fav_movie" id="fav_movie" class="form-check-input">
+                                <label for="">電影</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" name="fav_climb" id="fav_climb" class="form-check-input">
+                                <label for="">爬山</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" name="fav_shopping" id="fav_shopping" class="form-check-input">
+                                <label for="">逛街</label>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="reg_ok_btn">確認</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/sweetalert2@11.js"></script>
+    <script>
+        var flag_reg_username = false;
+        var flag_reg_password = false;
+        var flag_conf_password = false;
+        var flag_email = false;
+        var state_fav_read;
+        var state_fav_ball;
+        var state_fav_movie;
+        var state_fav_climb;
+        var state_fav_shopping;
+        $(function () {
+
+            //監聽註冊username
+            $("#reg_username").bind("input propertychange", function () {
+                if ($(this).val().length > 4 && $(this).val().length < 11) {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_reg_username = true;
+                    console.log(flag_reg_username);
+
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_reg_username = false;
+                }
+            });
+            //監聽註冊password
+
+            $("#reg_password").bind("input propertychange", function () {
+                if ($(this).val().length > 7 && $(this).val().length < 13) {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_reg_password = true;
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_reg_password = false;
+                }
+            });
+            //監聽確認pw
+            $("#conf_password").bind("input propertychange", function () {
+                if ($(this).val() == $("#reg_password").val()) {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_conf_password = true;
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_conf_password = false;
+                }
+            });
+            //2
+            $("#reg_password").bind("input propertychange", function () {
+                if ($(this).val() == $("#conf_password").val()) {
+                    $("#conf_password").removeClass("is-invalid");
+                    $("#conf_password").addClass("is-valid");
+                    flag_conf_password = true;
+                } else {
+                    $("#conf_password").removeClass("is-valid");
+                    $("#conf_password").addClass("is-invalid");
+                    flag_conf_password = false;
+                }
+            });
+
+            $('#fav_read').change(function () {
+                if ($(this).is(':checked')) {
+                    state_fav_read = "Y";
+                } else {
+                    state_fav_read = "";
+                }
+
+
+            });
+            $('#fav_ball').change(function () {
+                if ($(this).is(':checked')) {
+                    state_fav_ball = "Y";
+                } else {
+                    state_fav_ball = "";
+                }
+
+
+            });
+            $('#fav_movie').change(function () {
+                if ($(this).is(':checked')) {
+                    state_fav_movie = "Y";
+                } else {
+                    state_fav_movie = "";
+                }
+
+
+            });
+            $('#fav_climb').change(function () {
+                if ($(this).is(':checked')) {
+                    state_fav_climb = "Y";
+                } else {
+                    state_fav_climb = "";
+                }
+
+
+            });
+            $('#fav_shopping').change(function () {
+                if ($(this).is(':checked')) {
+                    state_fav_shopping = "Y";
+                } else {
+                    state_fav_shopping = "";
+                }
+
+
+            });
+
+            $("#reg_ok_btn").click(function () {
+                if (flag_reg_username && flag_reg_password && flag_conf_password) {
+                    var reg_dataJSON = {};
+                    reg_dataJSON["username"] = $("#reg_username").val();
+                    reg_dataJSON["password"] = $("#reg_password").val();
+                    reg_dataJSON["email"] = $("#email").val();
+                    reg_dataJSON["fav_read"] = state_fav_read;
+                    reg_dataJSON["fav_ball"] = state_fav_ball;
+                    reg_dataJSON["fav_movie"] = state_fav_movie;
+                    reg_dataJSON["fav_climb"] = state_fav_climb;
+                    reg_dataJSON["fav_shopping"] = state_fav_shopping;
+                    var usernameStatus = flag_reg_username ? "長度正確" : "長度錯誤";
+                    var passwordStatus = flag_reg_password ? "長度正確" : "長度錯誤";
+                    var confPasswordStatus = flag_conf_password ? "長度正確" : "長度錯誤";
+
+
+                    //1層
+                    Swal.fire({
+                        title: "檢查資料格式",
+                        html: `<b>帳號狀態:</b> ${usernameStatus}<br>
+                   <b>密碼狀態:</b> ${passwordStatus}<br>
+                   <b>確認密碼狀態:</b> ${confPasswordStatus}`,
+                        icon: "warning",
+                        showCancelButton: true,
+                        confirmButtonColor: "#3085d6",
+                        cancelButtonColor: "#d33",
+                        confirmButtonText: "確認"
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            //2層
+                            Swal.fire({
+                                title: "確認註冊?",
+                                showDenyButton: true,
+                                showCancelButton: false,
+                                confirmButtonText: "確認",
+                                denyButtonText: `取消`
+                            }).then((result) => {
+                                // 若使用者按下確認，才送出 AJAX 請求
+                                if (result.isConfirmed) {
+                                    $.ajax({
+                                        type: "POST",
+                                        url: "test-member-register.php",
+                                        data: JSON.stringify(reg_dataJSON),
+                                        dataType: "json",
+                                        success: showdata_reg,
+                                        error: function () {
+                                            alert("error-member-register-api.php");
+                                        }
+                                    });
+                                } else if (result.isDenied) {
+                                    Swal.fire("已取消註冊", "", "info");
+                                }
+                            });
+
+
+
+
+                        }
+                    });
+
+
+
+                } else {
+                    Swal.fire("欄位有錯請修正");
+                    console.log(flag_reg_username);
+                    console.log(flag_reg_password);
+                    console.log(flag_conf_password);
+                    console.log(flag_email);
+                    console.log(flag_rule);
+
+
+                }
+            })
+
+        });
+
+
+        function showdata_reg(data) {
+            console.log(data);
+
+            if (data.state) {
+
+                /* Read more about isConfirmed, isDenied below */
+
+                Swal.fire("註冊成功!", "", "success").then(() => {
+                    location.reload();
+                });
+
+
+
+
+            } else {
+                Swal.fire(data.message);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

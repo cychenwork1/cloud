@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/myall.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+
+        /* body {
+            text-align: center;
+            margin-top: 40vh;
+        } */
+
+        .counter {
+            font-family: 'Rampart One', cursive;
+            font-size: 32px;
+            /* margin: 100vh auto 40vh; */
+        }
+
+        .counter:not(.is-visible) {
+            visibility: hidden;
+        }
+
+        .s11_text {
+            z-index: 10;
+            background-color: rgba(0, 0, 0, 0.3);
+            color: white;
+            padding: 15px;
+        }
+
+        @media (max-width: 768px) {
+
+            .s07_text,
+            .s09_text,
+            .s11_text {
+                z-index: 10;
+                background-color: rgba(0, 0, 0, 0.3);
+                color: white;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- s01 -->
+    <section id="s01" class="bg-secondary">
+        <div class="container text-end">
+            <a href="">
+                <i class="fa-brands fa-square-facebook text-white"></i>
+            </a>
+            <a href="">
+                <i class="fa-brands fa-square-x-twitter text-white"></i>
+            </a>
+        </div>
+    </section>
+    <!-- s02-->
+    <section id="s02" class="bg-dark">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                        <i class="fa-solid fa-champagne-glasses fa-2x text-danger me-2"></i>旅遊公司</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">首頁</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#s03">關於我們</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Dropdown
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#s02">關於我們</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled">Disabled</a>
+                            </li>
+                        </ul>
+                        <div>
+                            <button class="btn btn-outline-warning" data-bs-toggle="modal"
+                                data-bs-target="#loginModal">登入</button>
+                            <button class="btn btn-success" data-bs-toggle="modal"
+                                data-bs-target="#registerModal">註冊</button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </section>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header text-bg-warning">
+                    <h1 class="modal-title fs-5 fw-900 text-white" id="exampleModalLabel">會員登入</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">帳號</label>
+                        <input type="text" name="username" id="username" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">密碼</label>
+                        <input type="password" name="password" id="password" class="form-control">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary">確認</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal 2-->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header text-bg-success">
+                    <h1 class="modal-title fs-5 fw-900 text-white" id="exampleModalLabel">會員註冊</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <h3>會員守則</h3>
+                            <p>請遵守以下守則</p>
+                            <h3>1.</h3>
+                            <ul>
+                                <li>訂單我愛就是主體因為大小化學，分公司輕。</li>
+                                <li>訂單我愛就是主體因為大小化學，分公司輕。</li>
+                            </ul>
+                            <h3>2.</h3>
+                            <ul>
+                                <li>訂單我愛就是主體因為大小化學，分公司輕。</li>
+                                <li>訂單我愛就是主體因為大小化學，分公司輕。</li>
+                            </ul>
+                            <h3>3.</h3>
+                            <ul>
+                                <li>訂單我愛就是主體因為大小化學，分公司輕。</li>
+                                <li>訂單我愛就是主體因為大小化學，分公司輕。</li>
+                            </ul>
+                            <h3>4.</h3>
+                            <ul>
+                                <li>訂單我愛就是主體因為大小化學，分公司輕。</li>
+                            </ul>
+                            <div class="form-check">
+                                <input type="checkbox" name="rule" id="rule" class="form-check-input  is-invalid">
+                                <label for="">同意遵守會員守則</label>
+                                <div class="valid-feedback">已同意遵守會員守則</div>
+                                <div class="invalid-feedback">尚未同意遵守會員守則</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="mb-3">
+                                <label for="re_username" class="form-label">帳號</label>
+                                <input type="text" name="re_username" id="re_username" class="form-control is-invalid"
+                                    placeholder="字數3~8">
+                                <div class="valid-feedback" id="re_username_msg">符合規定字數3~8</div>
+                                <div class="invalid-feedback" id="re_username_msg2">不符合規定字數3~8</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="re_password" class="form-label">密碼</label>
+                                <input type="password" name="re_password" id="re_password"
+                                    class="form-control is-invalid" placeholder="字數3~8">
+                                <div class="valid-feedback">符合規定字數3~8</div>
+                                <div class="invalid-feedback">不符合規定字數3~8</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="conf_password" class="form-label">確認密碼</label>
+                                <input type="password" name="conf_password" id="conf_password"
+                                    class="form-control is-invalid" placeholder="確認密碼">
+                                <div class="valid-feedback">密碼正確</div>
+                                <div class="invalid-feedback">密碼錯誤</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">e-mail</label>
+                                <input type="text" name="email" id="email" class="form-control is-invalid"
+                                    placeholder="字數3~15">
+                                <div class="valid-feedback">符合規定</div>
+                                <div class="invalid-feedback">不符合規定</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="reg_ok_btn">確認</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- s03 -->
+    <section id="s03">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
+                    aria-label="Slide 5"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active"
+                    style="background-image: url(image/vacation/wojciech-portnicki-IJGVSMI_nsw-unsplash.jpg);height: 40vh;background-position: center center;background-size:100%;">
+                    <div class="carousel-caption p-3 rounded-2 shadow-lg d-none d-md-block"
+                        style="background-color: rgba(0, 0, 0, 0.3);">
+                        <h5>探索夢想中的目的地</h5>
+                        <p>讓我們帶您走遍世界，發現美麗與奇蹟，創造難忘的回憶。</p>
+                    </div>
+                </div>
+                <div class="carousel-item "
+                    style="background-image: url(image/clay-banks-hwLAI5lRhdM-unsplash.jpg);height: 40vh;background-position: center center;background-size:100%;">
+                    <div class="carousel-caption p-3 rounded-2 shadow-lg d-none d-md-block"
+                        style="background-color: rgba(0, 0, 0, 0.3);">
+                        <h5>感受異國風情</h5>
+                        <p>體驗多元文化，品味當地美食，讓旅行更具意義。</p>
+                    </div>
+                </div>
+                <div class="carousel-item "
+                    style="background-image: url(image/nature/sergio-rota-YTqfQv-mTJ4-unsplash.jpg);height: 40vh;background-position: center center;background-size:100%;">
+                    <div class="carousel-caption p-3 rounded-2 shadow-lg d-none d-md-block"
+                        style="background-color: rgba(0, 0, 0, 0.3);">
+                        <h5>探索自然的奇妙</h5>
+                        <p>在大自然的懷抱中，享受徒步旅行和壯麗風景，重拾心靈的平靜。</p>
+                    </div>
+                </div>
+                <div class="carousel-item "
+                    style="background-image: url(image/city/jahanzeb-ahsan-99UViemk-IM-unsplash.jpg);height: 40vh;background-position: center center;background-size:100%;">
+                    <div class="carousel-caption p-3 rounded-2 shadow-lg d-none d-md-block"
+                        style="background-color: rgba(0, 0, 0, 0.3);">
+                        <h5>奢華度假體驗</h5>
+                        <p>沉浸於頂級的度假村和設施中，讓您享受無與倫比的放鬆時光。</p>
+                    </div>
+                </div>
+                <div class="carousel-item "
+                    style="background-image: url(image/Tokyo-STA_Marunouchi-Entrance_2023.jpg);height: 40vh;background-position: center center;background-size:100%;">
+                    <div class="carousel-caption p-3 rounded-2 shadow-lg d-none d-md-block"
+                        style="background-color: rgba(0, 0, 0, 0.3);">
+                        <h5>迷人的城市探險</h5>
+                        <p>在繁華的都市中，探索獨特的景點和文化，創造屬於您的城市故事。</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+
+    <!-- s04 -->
+    <section id="s04">
+        <div class="container-fluid">
+            <div class="row align-items-center ">
+                <div class="col-md-5 bg-cover"
+                    style="background-image: url(image/city/aaa1.png);height: 600px;background-attachment: fixed;">
+                </div>
+                <div class="col-md-7 p-5 text-center">
+                    <h1>成立於1998年<span class="" style="color: #028c6a;">全球第一家</span></h1>
+                    <h1>專業旅行社</h1>
+                    <p class="mb-1">我們致力於提供最優質的旅行服務，幫助您發現世界的美麗和奇蹟。我們的專業團隊將為您量身定制每一次旅行，讓您擁有難忘的體驗。</p>
+                    <p class="mb-1">我們的服務範圍涵蓋全球各地，無論是商務旅行、家庭度假還是冒險之旅，我們都能滿足您的需求。我們與全球多家頂級飯店和航空公司合作，確保您能享受最佳的旅行品質。</p>
+                    <p class="mb-1">我們的使命是讓每一位客戶都能擁有完美的旅行體驗，從出發到返程，我們都會全程為您提供支持和幫助。選擇我們，選擇安心、放心和舒心。</p>
+                    <div class="row p-5">
+                        <div class="col-3">
+                            <h4>年均服務人數</h4>
+                            <h2 class="counter01">10,000 <span class="h4"> /年</span> </h2>
+                        </div>
+                        <div class="col-3">
+                            <h4>旅行團數</h4>
+                            <h2 class="counter02">500 <span class="h4"> /年</span> </h2>
+                        </div>
+                        <div class="col-3">
+                            <h4>滿意度</h4>
+                            <h2 class="counter03">98% <span class="h4"> /以上</span> </h2>
+                        </div>
+                        <div class="col-3">
+                            <h4>合作夥伴</h4>
+                            <h2 class="counter04">200+ <span class="h4"> /全球</span> </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Why Choose Us Section -->
+    <section id="why-choose-us" class="py-5">
+        <div class="container text-center">
+            <h2 class="mb-4">為什麼選擇我們？</h2>
+            <p class="text-muted mb-5">我們提供優質的服務和獨特的旅行體驗，讓您的旅途更愉快。</p>
+            <div class="row">
+                <div class="col-md-3 mb-4 wow animate__bounceIn" data-wow-duration="1s" data-wow-delay="0.5s"
+                    data-wow-iteration="1">
+                    <div class="icon-box">
+                        <i class="fas fa-globe fa-3x  mb-3" style="color: #19b3b1;"></i>
+                        <h4 class="mb-2">全球覆蓋</h4>
+                        <p>我們在全球各地設有服務網點，確保您在任何地方都能獲得支援。</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4 wow animate__bounceIn" data-wow-duration="1s" data-wow-delay="0.6s"
+                    data-wow-iteration="1">
+                    <div class="icon-box">
+                        <i class="fas fa-star fa-3x  mb-3" style="color: #19b3b1;"></i>
+                        <h4 class="mb-2">高顧客滿意度</h4>
+                        <p>我們的客戶滿意度達到 98%，致力於提供最優質的服務。</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4 wow animate__bounceIn" data-wow-duration="1s" data-wow-delay="0.7s"
+                    data-wow-iteration="1">
+                    <div class="icon-box">
+                        <i class="fas fa-plane fa-3x  mb-3" style="color: #19b3b1;"></i>
+                        <h4 class="mb-2">多樣化的行程</h4>
+                        <p>我們提供多種行程選擇，滿足不同旅行需求和偏好。</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4 wow animate__bounceIn" data-wow-duration="1s" data-wow-delay="0.8s"
+                    data-wow-iteration="1">
+                    <div class="icon-box">
+                        <i class="fas fa-shield-alt fa-3x  mb-3" style="color: #19b3b1;"></i>
+                        <h4 class="mb-2">安全保障</h4>
+                        <p>我們的旅行計劃包含全方位的安全措施，保障您的旅途安全。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- s05 -->
+    <section id="s05" class="bg-cover"
+        style="background-image: url(image/datingscout-BmfXYrGqKJw-unsplash.jpg);background-attachment: fixed;height: 500px;">
+        <div class="container h-100">
+            <div class="row align-items-center h-100">
+                <div class="col-md-4 text-white">
+                    <p>探索世界的每一個角落，體驗不同的文化和風情。無論是迷人的城市，還是壯麗的自然景觀，我們都能為您提供最獨特的旅遊體驗。</p>
+                </div>
+                <div class="col-md-8 text-white">
+                    <p>我們的旅行社專注於打造量身定制的旅遊行程，讓您的每一次旅行都充滿驚喜和難忘的回憶。從豪華度假村到冒險探險，我們的專業團隊將根據您的需求和偏好設計出最佳的行程。</p>
+                    <p>我們與全球多家頂級飯店、航空公司和當地旅遊合作夥伴合作，確保您在旅途中享受到最好的服務和設施。無論是蜜月旅行、家庭度假還是商務旅行，我們都會提供專業的建議和支持，讓您的旅行無憂無慮。</p>
+                    <p>加入我們，開始您的夢幻之旅吧！讓我們幫助您探索世界的美麗和奇蹟，創造屬於您的獨特回憶。期待與您一同踏上這段美好的旅程。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- s06 -->
+    <section id="s06" style="background-color: #023459;">
+        <div class="container">
+            <div class="row  text-white">
+                <div class="col-md-4 text-center wow animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s"
+                    data-wow-iteration="1">
+                    <i class="fa-solid fa-plane-departure fa-8x mt-4 mb-3 " style="color: #7fb174;"></i>
+                    <h3 class="fw-700 mb-3">多樣化行程選擇</h3>
+                    <p class="fs-5">
+                        提供多樣化的行程選擇，從城市探險到自然風光，滿足不同旅行者的需求。無論是家庭旅遊、蜜月旅行還是冒險之旅，我們都能為您提供最佳的旅行體驗。
+                    </p>
+                </div>
+                <div class="col-md-4 text-center wow animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s"
+                    data-wow-iteration="1">
+                    <i class="fa-solid fa-hotel fa-8x mt-4 mb-3 " style="color: #ffd954;"></i>
+                    <h3 class="fw-700 mb-3">優質住宿安排</h3>
+                    <p class="fs-5">
+                        與全球多家五星級飯店合作，確保您每次旅途中的住宿都舒適愜意。我們的住宿選擇包括豪華酒店、精品民宿和特色度假村，讓您的旅行更加愉快。
+                    </p>
+                </div>
+                <div class="col-md-4 text-center wow animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.7s"
+                    data-wow-iteration="1">
+                    <i class="fa-solid fa-user-tie fa-8x  mt-4 mb-3 " style="color: #fe7773;"></i>
+                    <h3 class="fw-700 mb-3">專業導遊服務</h3>
+                    <p class="fs-5">
+                        我們的專業導遊擁有豐富的知識和經驗，將為您提供深度的旅行講解和貼心的服務。無論是在歷史古跡還是自然景觀，導遊都能讓您的旅途更加充實和有趣。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- s07 -->
+    <section id="s07" style="position: relative;">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-5 bg-cover wow animate__fadeIn" data-wow-duration="1s" data-wow-delay="0.5s"
+                    data-wow-iteration="1"
+                    style="background-image: url(image/mert-kahveci-8nrsvb59wso-unsplash.jpg);position:absolute;top: 0;bottom: 0;">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row justify-content-end">
+                <div class="col-md-7 mt-5 s07_text">
+                    <div class="wow animate__fadeInRight" data-wow-duration="1.5s" data-wow-delay="0.5s"
+                        data-wow-iteration="1">
+                        <div class="h3">探索世界的美麗景點</div>
+                        <p>我們精選了世界各地的美麗景點，為您帶來獨特的旅遊體驗。無論是壯麗的自然景觀還是充滿歷史和文化的城市，每一個景點都將讓您驚嘆不已。</p>
+                    </div>
+                    <button class="btn btn-outline-info wow animate__fadeInRight">查看更多</button>
+                    <div class="row mt-5">
+                        <div class="col-md-6 wow animate__fadeInRight" data-wow-duration="0.7s" data-wow-delay="0.5s"
+                            data-wow-iteration="1">
+                            <div class="h3">巴黎埃菲爾鐵塔</div>
+                            <p>作為法國的象徵，埃菲爾鐵塔每年吸引著數百萬的遊客。您可以登上塔頂，俯瞰整個巴黎市景，感受這座浪漫之都的獨特魅力。</p>
+                        </div>
+
+                        <div class="col-md-6 wow animate__fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s"
+                            data-wow-iteration="1">
+                            <div class="h3">大峽谷國家公園</div>
+                            <p>美國亞利桑那州的大峽谷國家公園以其壯麗的峽谷景觀聞名於世。無論是徒步旅行還是乘坐直升機遊覽，這裡的每一寸土地都充滿了壯觀的自然美景。</p>
+                        </div>
+
+                        <div class="col-md-6 wow animate__fadeInRight" data-wow-duration="0.7s" data-wow-delay="0.5s"
+                            data-wow-iteration="1">
+                            <div class="h3">京都清水寺</div>
+                            <p>日本京都的清水寺是世界文化遺產之一，以其古老的木製建築和壯麗的自然環境而著稱。春天的櫻花和秋天的楓葉為這裡增添了無盡的魅力。</p>
+                        </div>
+
+                        <div class="col-md-6 wow animate__fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s"
+                            data-wow-iteration="1">
+                            <div class="h3">馬爾代夫海島</div>
+                            <p>馬爾代夫是度假天堂，以其清澈的海水和奢華的度假村聞名。這裡是潛水和浮潛愛好者的天堂，讓您盡享海洋的神奇。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- s08 -->
+    <section id="s08" style="position: relative;">
+        <div class="container py-4">
+            <div class="h2 fw-700 text-center text-warning mb-4">探索我們的精彩旅遊方案</div>
+            <div class="row">
+                <div class="col-md-6 box_roller">
+                    <div class="roller">
+                        <a href="#" target="_blank">
+                            <button class="btn bg-btn03">了解更多</button>
+                        </a>
+                    </div>
+                    <div class="d-flex">
+                        <i class="fa-solid fa-plane-departure fa-6x me-4 " style="color: #99124f;"></i>
+                        <div>
+                            <div class="h3">豪華國際旅遊</div>
+                            <p>體驗最奢華的國際旅行，我們將帶您前往世界上最令人嚮往的目的地。從巴黎的浪漫到馬爾代夫的夢幻，我們的一切安排都將確保您擁有難忘的回憶。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 box_roller">
+                    <div class="roller">
+                        <a href="#" target="_blank">
+                            <button class="btn bg-btn03">了解更多</button>
+                        </a>
+                    </div>
+                    <div class="d-flex">
+                        <i class="fa-solid fa-mountain fa-6x me-4 " style="color: #028c6a;"></i>
+                        <div>
+                            <div class="h3">冒險探險之旅</div>
+                            <p>對於喜愛冒險的旅行者，我們提供各種刺激的探險活動。無論是登山、潛水還是叢林探險，我們的專業團隊將確保您的安全並帶來最精彩的體驗。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 box_roller">
+                    <div class="roller">
+                        <a href="#" target="_blank">
+                            <button class="btn bg-btn03">了解更多</button>
+                        </a>
+                    </div>
+                    <div class="d-flex">
+                        <i class="fa-solid fa-city fa-6x me-4" style="color: #99acbb;"></i>
+                        <div>
+                            <div class="h3">城市文化探索</div>
+                            <p>深入探索世界著名城市的獨特文化。我們的城市旅遊方案包括參觀歷史名勝、博物館和當地市場，讓您深入了解每個城市的魅力。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 box_roller">
+                    <div class="roller">
+                        <a href="#" target="_blank">
+                            <button class="btn bg-btn03">了解更多</button>
+                        </a>
+                    </div>
+                    <div class="d-flex">
+                        <i class="fa-solid fa-water fa-6x me-4 " style="color: #58badd;"></i>
+                        <div>
+                            <div class="h3">海灘度假</div>
+                            <p>享受陽光、沙灘和海洋的完美結合。我們的海灘度假方案讓您在世界最美的海灘上放鬆身心，無論是享受日光浴還是參加水上活動，這裡都是您的天堂。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- s09 -->
+    <section id="s09" style="position: relative;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7  mt-5 s09_text">
+
+                    <dl class="row">
+                        <dt class="col-sm-3">旅遊目的地</dt>
+                        <dd class="col-sm-9">巴黎，法國</dd>
+
+                        <dt class="col-sm-3">價格</dt>
+                        <dd class="col-sm-9">$2000 USD</dd>
+
+                        <dt class="col-sm-3">行程</dt>
+                        <dd class="col-sm-9">
+                            <p>第一天：抵達並入住酒店。</p>
+                            <p>第二天：參觀埃菲爾鐵塔和盧浮宮。</p>
+                            <p>第三天：遊覽凡爾賽宮和塞納河遊船。</p>
+                        </dd>
+
+                        <dt class="col-sm-3">住宿</dt>
+                        <dd class="col-sm-9">四星級酒店，含早餐</dd>
+
+                        <dt class="col-sm-3">交通</dt>
+                        <dd class="col-sm-9">包括國際往返機票和當地交通</dd>
+
+                        <dt class="col-sm-3 text-truncate">注意事項</dt>
+                        <dd class="col-sm-9">需要有效護照和簽證</dd>
+
+
+                        <dt class="col-sm-3">客服電話</dt>
+                        <dd class="col-sm-9">123-456-7890</dd>
+
+                        <dt class="col-sm-3">電子郵件</dt>
+                        <dd class="col-sm-9">info@travelagency.com</dd>
+
+                    </dl>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row justify-content-end">
+                <div class="col-md-5 bg-cover"
+                    style="background-image: url(image/city/il-vagabiondo-FlkxnZdebMk-unsplash.jpg);position:absolute;top: 0;bottom: 0;">
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- s10 -->
+    <section id="s10">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3641.0309396246266!2d120.69300770981268!3d24.135551560220414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1slalaport!5e0!3m2!1szh-TW!2stw!4v1722912469972!5m2!1szh-TW!2stw"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="" class="form-label">姓名</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">電話</label>
+                        <input type="phone" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">email</label>
+                        <input type="enail" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for=""  class="form-label">人數</label>
+                        <input type="number" class="form-control" id="num" min="1">
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="food1">
+                        <label for="" class="form-label">全葷食</label>
+
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="food1" id="doof1">
+                        <label for=""  class="form-label">需素食<span><input type="number"
+                                    style="height: 30px; width: 60px;" class="form-control d-inline w-25" id="vag" min="1" max=""
+                                    placeholder="">人</input></span></label>
+
+                    </div>
+                    <div class="mb-3">
+                        <button class="btn btn-secondary mt-3">取消</button>
+                        <button class="btn mt-3 mx-2 text-white" style="background-color: #2babe6;">確認</button>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- s11 -->
+    <section id="s11">
+        <div class="row">
+            <div class="col-md-6 bg-cover"
+                style="background-image: url(image/brooke-cagle--uHVRvDr7pg-unsplash.jpg);height: 300px;">
+                <div class="row align-items-center mt-3 ms-2">
+                    <div class="col-7 s11_text">
+                        <small class="text-dark fw-700 mt-3 "
+                            style=" text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;  ">加入我們</small>
+                        <div class="h2 fw-700 mt-1">誠徵業務經理人</div>
+                        <p>中文西部科學，開放和平島自我會有壓力兩種，重複專利討論在他排行加拿大列表，文學歲月現在大陸飛機客服，規範收購改造福州採訪確保保障寶貝只需還要令人經營，像是走了小組我國外國調節奇蹟，女子她的，一是新年。
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 bg-cover"
+                style="background-image: url(image/brooke-cagle--uHVRvDr7pg-unsplash.jpg);height: 300px;">
+                <div class="row align-items-center mt-3 ms-2">
+                    <div class="col-7 s11_text  ms-auto">
+                        <small class="text-dark fw-700 mt-3 "
+                            style=" text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;  ">加入我們</small>
+                        <div class="h2 fw-700 mt-1">誠徵業務經理人</div>
+                        <p>中文西部科學，開放和平島自我會有壓力兩種，重複專利討論在他排行加拿大列表，文學歲月現在大陸飛機客服，規範收購改造福州採訪確保保障寶貝只需還要令人經營，像是走了小組我國外國調節奇蹟，女子她的，一是新年。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer Section -->
+    <footer class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <!-- Newsletter Subscription -->
+                <div class="col-md-3">
+                    <h5 class="mb-4">訂閱我們</h5>
+                    <p>訂閱我們的新聞，保持最新動態。我們不會發送垃圾郵件或不重要的信息。</p>
+                    <form>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Email" required>
+                        </div>
+                        <button type="submit" class="btn bg-btn04">訂閱</button>
+                    </form>
+                </div>
+                <!-- Social Links -->
+                <div class="col-md-3">
+                    <h5 class="mb-4">社交媒體</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="#"><i class="fab fa-pinterest"></i> Pinterest</a></li>
+                        <li><a href="#"><i class="fab fa-behance"></i> Behance</a></li>
+                        <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+                    </ul>
+                </div>
+                <!-- Sitemap Links -->
+                <div class="col-md-3">
+                    <h5 class="mb-4">網站地圖</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="">首頁</a></li>
+                        <li><a href="#">特色</a></li>
+                        <li><a href="#">價格</a></li>
+                        <li><a href="#">截圖</a></li>
+                        <li><a href="#">部落格</a></li>
+                    </ul>
+                </div>
+                <!-- Contact Information -->
+                <div class="col-md-3">
+                    <h5 class="mb-4">聯繫我們</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-map-marker-alt"></i> 45-50 Bar St. New York</li>
+                        <li><i class="fas fa-envelope"></i> brand@domain.com</li>
+                        <li><i class="fas fa-envelope"></i> support@domain.com</li>
+                        <li><i class="fas fa-phone"></i> +00 (123) 456 78 90</li>
+                        <li><a href="#"><i class="fas fa-sitemap"></i> 網站地圖</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- s12-->
+    <section id="s12" class="bg-light">
+        <div class="container">
+            <ul class="nav ">
+                <li class="nav-item">
+                    <a class="nav-link disabled">雲端班製作2024.08</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">購物車</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">友站</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+
+            </ul>
+        </div>
+    </section>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/sweetalert2@11.js"></script>
+    <script>
+        var flag_re_username = false;
+        var flag_re_password = false;
+        var flag_conf_password = false;
+        var flag_email = false;
+        var flag_rule = false;
+
+        $(function () {
+            new WOW().init();
+            const counterUp = window.counterUp.default
+
+            const callback = entries => {
+                entries.forEach(entry => {
+                    const el = entry.target
+                    if (entry.isIntersecting && !el.classList.contains('is-visible')) {
+                        counterUp(el, {
+                            duration: 1000,
+                            delay: 16,
+                        })
+                        el.classList.add('is-visible')
+                    }
+                })
+            }
+
+            const callback2 = entries => {
+                entries.forEach(entry => {
+                    const el = entry.target
+                    if (entry.isIntersecting && !el.classList.contains('is-visible')) {
+                        counterUp(el, {
+                            duration: 2000,
+                            delay: 16,
+                        })
+                        el.classList.add('is-visible')
+                    }
+                })
+            }
+
+            const IO = new IntersectionObserver(callback, { threshold: 1 })
+            const IO2 = new IntersectionObserver(callback2, { threshold: 1 })
+
+            const el01 = document.querySelector('.counter01')
+            IO2.observe(el01)
+            const el02 = document.querySelector('.counter02')
+            IO.observe(el02)
+            const el03 = document.querySelector('.counter03')
+            IO.observe(el03)
+            const el04 = document.querySelector('.counter04')
+            IO.observe(el04)
+
+            $('#num').on('input', function() {
+            var totalNum = parseInt($(this).val(), 10);
+            
+            // 設置 "需素食" 欄位的最大值為 "人數"
+            $('#vag').attr('max', totalNum);
+            
+            // 如果 "需素食" 的值超過 "人數"，則自動將其設置為最大值
+            if (parseInt($('#vag').val(), 10) > totalNum) {
+                $('#vag').val(totalNum);
+            }
+        });
+
+
+
+            $("#re_username").bind("input propertychange", function () {
+                if ($(this).val().length > 2 && $(this).val().length < 9) {
+                    var dataJSON = {};
+                    dataJSON["username"] = $("#re_username").val();
+
+                    $.ajax({
+                        type: "POST",
+                        url: "member-register-checkuni-api.php",
+                        data: JSON.stringify(dataJSON),
+                        dataType: "json",
+                        success: showdata_checkuni,
+                        error: function (xhr, ajaxOptions, thrownError) {
+                            console.log(xhr.status);
+                            console.log(thrownError);
+                        }
+                    });
+
+
+
+                    // error: function (){
+                    //         alert("error-member-register-checkuni-api.php");
+                    //     }
+
+
+                    // $(this).removeClass("is-invalid");
+                    // $(this).addClass("is-valid");
+                    // flag_re_usname = true;
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_re_username = false;
+                }
+            });
+            $("#re_password").bind("input propertychange", function () {
+                if ($(this).val().length > 2 && $(this).val().length < 9) {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_re_password = true;
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_re_password = false;
+                }
+            });
+            $("#conf_password").bind("input propertychange", function () {
+                if ($(this).val() == $("#re_password").val()) {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_conf_password = true;
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_conf_password = false;
+                }
+            });
+            $("#email").bind("input propertychange", function () {
+                if ($(this).val().length > 2 && $(this).val().length < 16) {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_email = true;
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_email = false;
+                }
+            });
+            $("#rule").change(function () {
+                if ($(this).is(":checked")) {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_rule = true;
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_rule = false;
+                }
+            });
+            $("#reg_ok_btn").click(function () {
+                if (flag_re_username && flag_re_password && flag_conf_password && flag_email && flag_rule) {
+                    var reg_dataJSON = {};
+                    reg_dataJSON["username"] = $("#re_username").val();
+                    reg_dataJSON["password"] = $("#re_password").val();
+                    reg_dataJSON["email"] = $("#email").val();
+
+                    $.ajax({
+                        type: "POST",
+                        url: "member-register-api.php",
+                        data: JSON.stringify(reg_dataJSON),
+                        dataType: "json",
+                        success: showdata_reg,
+                        error: function () {
+                            alert("error-member-register-api.php");
+                        }
+
+
+                    });
+
+
+
+                } else {
+                    Swal.fire("欄位有錯請修正");
+                    console.log(flag_re_username);
+                    console.log(flag_re_password);
+                    console.log(flag_conf_password);
+                    console.log(flag_email);
+                    console.log(flag_rule);
+
+
+                }
+            })
+
+
+
+        });
+        function showdata_checkuni(data) {
+            console.log(data);
+            if (data.state) {
+                $("#re_username").removeClass("is-invalid");
+                $("#re_username_msg").text(data.message);
+                $("#re_username").addClass("is-valid");
+                flag_re_username = true;
+                console.log(flag_re_username);
+            } else {
+                $("#re_username").removeClass("is-valid");
+                $("#re_username_msg2").text(data.message);
+                $("#re_username").addClass("is-invalid");
+                flag_re_username = false;
+            }
+        }
+        function showdata_reg(data) {
+            console.log(data);
+            if (data.state) {
+               Swal.fire(data.message).then((result) => {
+                        if (result.isConfirmed) {
+                            location.reload(); // 按下確認按鈕後重整頁面
+                        }
+                    });
+            } else {
+                Swal.fire(data.message);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

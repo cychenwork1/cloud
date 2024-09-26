@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@100;200;300;400;500;600;700&display=swap');
+
+body {
+  font-family: "IBM Plex Sans JP", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.fw-100{
+  font-weight: 100;
+}
+.fw-200{
+  font-weight: 200;
+}
+.fw-300{
+  font-weight: 300;
+}
+.fw-400{
+  font-weight: 400;
+}
+.fw-500{
+  font-weight: 500;
+}
+.fw-600{
+  font-weight: 600;
+}
+.fw-700{
+  font-weight: 700;
+}
+.fw-800{
+  font-weight: 800;
+}
+.fw-900{
+  font-weight: 900;
+}
+
+:root {
+  --mycolor01: #b98d72;
+  --mycolor02: #ae4951;
+  --mycolor03: #57233a;
+  --mycolor04: #161b1f;
+  --mycolor05: #e4dace;
+  --mycolor06: #e5bb4b;
+  --mycolor07: #498eaf;
+  --mycolor08: #631f16;
+  --mytextcolor01: #ddd3d3;
+  --mytextcolor02: #e22a0a;
+
+  --mycolor09: #e1dcd9;
+  --mycolor10: #8f8681;
+  --mycolor11: #a67f78;
+  --mycolor12: #32435f;
+
+  --mycolor13: #ffd954;
+  --mycolor14: #e4b660;
+  --mycolor15: #f2ab39;
+  --mycolor16: #69491a;
+
+  --mycolor17: #d1ede1;
+  --mycolor18: #7bc5ae;
+  --mycolor19: #028c6a;
+  --mycolor20: #003e19;
+
+  --mycolor21: #d1dddb;
+  --mycolor22: #85b8cb;
+  --mycolor23: #1d6a96;
+  --mycolor24: #283b42;
+
+  --mycolor25: #d5d2c1;
+  --mycolor26: #bd8e62;
+  --mycolor27: #a46843;
+  --mycolor28: #370d00;
+
+  --mycolor29: #9bcfb8;
+  --mycolor30: #7fb174;
+  --mycolor31: #689c97;
+  --mycolor32: #072a24;
+
+  --mycolor33: #ffc2c3;
+  --mycolor34: #fe7773;
+  --mycolor35: #e81e25;
+  --mycolor36: #0e0301;
+
+  --mycolor45: #b78338;
+  --mycolor46: #915c4c;
+  --mycolor47: #40686a;
+  --mycolor48: #2f1812;
+
+  --mycolor49: #e3a6a1;
+  --mycolor50: #bc5f6a;
+  --mycolor51: #19b3b1;
+  --mycolor52: #034b61;
+
+  --mycolor53: #bdbdbf;
+  --mycolor54: #5580a0;
+  --mycolor55: #cc8a4d;
+  --mycolor56: #32435f;
+
+  --mycolor57: #b2a59f;
+  --mycolor58: #023459;
+  --mycolor59: #1e646e;
+  --mycolor60: #002c2f;
+
+  --mycolor61: #b98d72;
+  --mycolor62: #ae4951;
+  --mycolor63: #57233a;
+  --mycolor64: #161b1f;
+
+  --mycolor65: #b2a59f;
+  --mycolor66: #023459;
+  --mycolor67: #1e646e;
+  --mycolor68: #002c2f;
+
+  --mycolor69: #ccd3d9;
+  --mycolor70: #fed5d9;
+  --mycolor71: #732120;
+  --mycolor72: #321e17;
+}
+
+
+
+.bg-primary01 {
+  background-color: var(--mycolor01);
+}
+.bg-primary02 {
+  background-color: var(--mycolor02);
+}
+.bg-primary03 {
+  background-color: var(--mycolor03);
+}
+.bg-01 {
+  background-color: var(--mycolor14);
+}
+.bg-02 {
+  background-color: var(--mycolor16);
+}
+
+.bg-03 {
+  background-color: var(--mycolor25);
+}
+
+.bg-cover {
+  background-position: center center;
+  background-size: cover;
+}
+
+.text-color01 {
+  color: var(--mytextcolor02);
+}
+.text-color02 {
+  color: var(--mytextcolor01);
+}
+.myborder-01 {
+  border: var(--mytextcolor02) 5px solid;
+}
+.myborder-02 {
+  border: var(--mycolor04) 2px solid;
+}
+.bg-btn01 {
+  background-color: var(--mycolor08);
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 2px var(--mycolor04);
+  margin-right: 10;
+  /* 右下模糊線粗 */
+  color: var(--mycolor06);
+}
+.bg-btn01:hover {
+  background-color: var(--mycolor05);
+  color: var(--mycolor03);
+  box-shadow: 5px 5px 2px 2px var(--mycolor04);
+  margin: 10px;
+}
+.bg-btn02 {
+  background-color: var(--mycolor05);
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 2px var(--mycolor04);
+  margin-right: 10;
+  /* 右下模糊線粗 */
+}
+.bg-btn03 {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-decoration: none;
+  color: var(--mycolor71);
+  font-size: 20px;
+  /* display: block; */
+  background-color: var(--mycolor18);
+
+  box-shadow: 2px 2px 2px 2px var(--mycolor19);
+  margin-right: 10;
+  /* 右下模糊線粗 */
+}
+.bg-btn03:hover {
+  background-color: var(--mycolor51);
+  color: var(--mycolor03);
+  box-shadow: 5px 5px 2px 2px var(--mycolor56);
+  margin: 10px;
+}
+.bg-btn04 {
+  background-color: var(--mycolor07);
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 2px var(--mycolor67);
+  margin-right: 10;
+  /* 右下模糊線粗 */
+  color: var(--mycolor09);
+}
+.box01 {
+  width: 200px;
+  height: 200px;
+  /* background-color: #CCCCCC; */
+  border: black 5px solid;
+  padding: 20px;
+  /* box-sizing: border-box; */
+}
+.box02 {
+  width: 200px;
+  height: 200px;
+  /* background-color: #CCCCCC; */
+  border: var(--mycolor03) 5px solid;
+  padding: 20px;
+  /* box-sizing: border-box; */
+}
+
+/* 卷軸 */
+.box_roller {
+  position: relative;
+  overflow: hidden;
+}
+
+.box_roller:hover .roller {
+  top: 0%;
+  transition: 500ms;
+}
+
+
+.box_roller:hover .rollerHalf {
+  top: -50%;
+  transition: 500ms;
+}
+
+
+.box_roller .roller {
+  position: absolute;
+  top: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+
+.box_roller .rollerHalf {
+  position: absolute;
+  top: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+/* --- */
+
+/* table-rwd */
+
+@media screen and (max-width: 992px){
+  .table-rwd thead{
+      display: none;
+  }
+  .table-rwd tbody tr{
+      display: block;
+      border: 5px solid var(--mycolor09);
+      margin-top: 15px;
+  }
+  .table-rwd tbody tr td{
+      display: block;
+      overflow: hidden;
+  }
+  .table-rwd tbody tr td::before{
+      content: attr(data-th)" : ";
+      color: brown;
+      /* font-size: 20px; */
+      font-weight: bolder;
+      display: block;
+      float: left;
+      width: 6em;
+      text-align: right;
+      padding-right: 1em;
+  }
+  .table-rwd tbody tr td span.table-col{
+      display: block;
+      float: left;
+      width: calc(100% - 6em);
+  }
+}
+/* table-rwd */

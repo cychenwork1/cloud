@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/myall.css">
+    <style>
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        .card-body {
+            flex-grow: 1;
+        }
+
+        .card-img-top {
+            height: 300px;
+            width: 100%;
+            object-fit: cover;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="banner bg-cover pt-5 pe-5 sh"
+        style="background-image: url(image/akira-_UX23UCWEJ8-unsplash.jpg); height: 250px;">
+        <div class="display-1 fw-700 text-white">觀光署旅館資料</div>
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-center ">
+            <div class="col-8">
+                <select name="regionList" id="regionList" class="form-select shadow-lg" style="margin-top: -15px;">
+                    <option class="selected" value="">---請選擇縣市---</option>
+                </select>
+            </div>
+        </div>
+        <div class="row" id="items">
+            <div class="col-md-6 col-lg-4 col-xl-3">
+                <div class="card">
+                    <div style="height: 300;">
+                        <img src="https://taiwan.taiwanstay.net.tw/twpic/14921.jpg" class="card-img-top" alt="">
+                    </div>
+                    <div class="card-body">
+                        <div class="h3 fw-700">凱莎琳庭園大飯店</div>
+                        <div class="h3">地址:高雄市前金區文武三街145號</div>
+                        <div class="h3">電話:886-7-2152158</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination pagination-lg justify-content-center" id="pagelist">
+                    <li class="page-item disabled" onclick="drawTable(xxx)">
+                        <a class="page-link">上一頁</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">下一頁</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+    </div>
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/chart.js"></script>
+    <script>
+        var hoteldata = [];
+        var regionTitle = [];
+        var counter = [];
+        var regionData = [];
+
+
+
+        $(function () {
+            $.ajax({
+                type: "GET",
+                url: "js/hotel_C_f.json",
+                dataType: "json",
+                async: false,
+                success: function (data) {
+                    console.log(data);
+                    hoteldata = data.XML_Head.Infos.Info;
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    console.log(xhr.status);
+                    console.log(thrownError);
+                }
+            })
+
+
+            console.log(hoteldata);
+            hoteldata.forEach(function (item) {
+                // console.log(item.Region);
+                if (counter[item.Region] == undefined) {
+                    counter[item.Region] = regionData.length;
+                    regionData.push(new Array());
+                    regionTitle[counter[item.Region]] = item.Region;
+                }
+                regionData[counter[item.Region]].push(item);
+            });
+
+            console.log(regionTitle);
+            console.log(counter);
+            console.log(regionData);
+
+
+            $("#regionList").empty();
+            $("#regionList").append('<option disabled selected value="">---請選擇縣市---</option>');
+
+            regionTitle.forEach(function (item) {
+
+                var strHTML = '<option value="' + item + '">' + item + '</option>';
+                $("#regionList").append(strHTML);
+
+            });
+
+
+
+            //監聽選項
+            $("#regionList").change(function () {
+
+                var selectedOption = $(this).val();
+                var selectedIndex = regionTitle.indexOf(selectedOption);
+                console.log(selectedOption);
+                $("#items").empty();
+                regionData[selectedIndex].forEach(function (item, key) {
+                    if (key % 10 == 0) {
+                        newdata.push([]);
+                    }
+                    var page = parseInt(key / 10);
+                    newdata[page].push(item);
+
+                    if (item.Picture1 == "") {
+                        item.Picture1 = "image/noimage2.png";
+                    }
+                    var strHTML = '<div class="col-md-6 col-lg-4 col-xl-3"> <div class="card" > <div style="height: 300;"><img src="' + item.Picture1 + '" class="card-img-top" alt="" > </div> <div class="card-body "> <div class="h3 fw-700">' + item.Name + '</div> <div class="h3">地址:' + item.Add + '</div> <div class="h3">電話:' + item.Tel + '</div> </div> </div> </div>';
+                    $("#items").append(strHTML);
+                });
+
+
+                drawTable(0);
+
+            });
+
+            function drawTable(page) {
+        
+
+
+                //產生頁碼
+
+
+                $("#pagelist").empty();
+
+                var pgup;
+                var pgdn;
+                if (page == 0) {
+                    pgup = '<li class="page-item disabled" > <a class="page-link">上一頁</a> </li>';
+                } else {
+                    pgup = '<li class="page-item " onclick="drawTable(' + (page - 1) + ')"> <a class="page-link">上一頁</a> </li>';
+                }
+
+                if (page == newdata.length - 1) {
+                    pgdn = '<li class="page-item disabled" > <a class="page-link">下一頁</a> </li>'
+                } else {
+                    pgdn = '<li class="page-item" onclick="drawTable(' + (page + 1) + ')"> <a class="page-link">下一頁</a> </li>'
+
+                }
+
+                $("#pagelist").append(pgup);
+
+                for (var i = 0; i < newdata.length; i++) {
+                    var thisPage = i + 1;
+                    var strHtml;
+                    if (thisPage == page + 1) {
+                        strHtml = '<li class="page-item active" onclick="drawTable(' + (thisPage - 1) + ')"><a class="page-link" href="#">' + thisPage + '</a></li>';
+                    } else {
+                        strHtml = '<li class="page-item" onclick="drawTable(' + (thisPage - 1) + ')"><a class="page-link" href="#">' + thisPage + '</a></li>';
+                    }
+                    // if (thisPage == page + 1) {
+                    //     strHtml = '<li class="page-item active"><a class="page-link" href="#" onclick="drawTable(' + (thisPage - 1) + '); event.preventDefault();">' + thisPage + '</a></li>';
+                    // } else {
+                    //     strHtml = '<li class="page-item"><a class="page-link" href="#" onclick="drawTable(' + (thisPage - 1) + '); event.preventDefault();">' + thisPage + '</a></li>';
+                    // }
+                    $("#pagelist").append(strHtml);
+                }
+
+                $("#pagelist").append(pgdn);
+
+
+
+            }
+
+
+
+
+        });
+
+
+
+
+    </script>
+</body>
+
+</html>

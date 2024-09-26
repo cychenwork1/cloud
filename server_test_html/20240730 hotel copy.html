@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/myall.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+
+        /* body {
+            text-align: center;
+            margin-top: 40vh;
+        } */
+
+        .counter {
+            font-family: 'Rampart One', cursive;
+            font-size: 32px;
+            /* margin: 100vh auto 40vh; */
+        }
+
+        .counter:not(.is-visible) {
+            visibility: hidden;
+        }
+
+        .s11_text {
+            z-index: 10;
+            background-color: rgba(0, 0, 0, 0.3);
+            color: white;
+            padding: 15px;
+        }
+
+        @media (max-width: 768px) {
+
+            .s07_text,
+            .s09_text,
+            .s11_text {
+                z-index: 10;
+                background-color: rgba(0, 0, 0, 0.3);
+                color: white;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- s01 -->
+    <section id="s01" class="bg-secondary">
+        <div class="container text-end">
+            <a href="">
+                <i class="fa-brands fa-square-facebook text-white"></i>
+            </a>
+            <a href="">
+                <i class="fa-brands fa-square-x-twitter text-white"></i>
+            </a>
+        </div>
+    </section>
+    <!-- s02-->
+    <section id="s02" class="bg-dark">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                        <i class="fa-solid fa-champagne-glasses fa-2x text-danger me-2"></i>旅遊公司</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">首頁</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#s03">關於我們</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Dropdown
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#s02">關於我們</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled">Disabled</a>
+                            </li>
+                        </ul>
+                        <div>
+                            <button class="btn btn-outline-warning" data-bs-toggle="modal"
+                                data-bs-target="#loginModal">登入</button>
+                            <button class="btn btn-success" data-bs-toggle="modal"
+                                data-bs-target="#registerModal">註冊</button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </section>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header text-bg-warning">
+                    <h1 class="modal-title fs-5 fw-900 text-white" id="exampleModalLabel">會員登入</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">帳號</label>
+                        <input type="text" name="username" id="username" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">密碼</label>
+                        <input type="password" name="password" id="password" class="form-control">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary">確認</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal 2-->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header text-bg-success">
+                    <h1 class="modal-title fs-5 fw-900 text-white" id="exampleModalLabel">會員註冊</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <h3>會員守則</h3>
+                            <p>請遵守以下守則</p>
+                            <h3>1.</h3>
+                            <ul>
+                                <li>訂單我愛就是主體因為大小化學，分公司輕。</li>
+                                <li>訂單我愛就是主體因為大小化學，分公司輕。</li>
+                            </ul>
+                            <h3>2.</h3>
+                            <ul>
+                                <li>訂單我愛就是主體因為大小化學，分公司輕。</li>
+                                <li>訂單我愛就是主體因為大小化學，分公司輕。</li>
+                            </ul>
+                            <h3>3.</h3>
+                            <ul>
+                                <li>訂單我愛就是主體因為大小化學，分公司輕。</li>
+                                <li>訂單我愛就是主體因為大小化學，分公司輕。</li>
+                            </ul>
+                            <h3>4.</h3>
+                            <ul>
+                                <li>訂單我愛就是主體因為大小化學，分公司輕。</li>
+                            </ul>
+                            <div class="form-check">
+                                <input type="checkbox" name="" id="" class="form-check-input">
+                                <label for="">已同意會員守則</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="mb-3">
+                                <label for="re_username" class="form-label">帳號</label>
+                                <input type="" name="re_username" id="re_username" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="re_password" class="form-label">密碼</label>
+                                <input type="password" name="re_password" id="re_password" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="conf_password" class="form-label">確認密碼</label>
+                                <input type="password" name="conf_password" id="conf_password" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">e-mail</label>
+                                <input type="text" name="email" id="email" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary">確認</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- s03 -->
+    <section id="s03">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
+                    aria-label="Slide 5"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active"
+                    style="background-image: url(image/clay-banks-hwLAI5lRhdM-unsplash.jpg);height: 40vh;background-position: center center;">
+                    <div class="carousel-caption p-3 rounded-2 shadow-lg d-none d-md-block"
+                        style="background-color: rgba(0, 0, 0, 0.3);">
+                        <h5>First slide label</h5>
+                        <p>Some representative placeholder content for the first slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item "
+                    style="background-image: url(image/alex-knight-wfwUpfVqrKU-unsplash.jpg);height: 40vh;background-position: center center;">
+                    <div class="carousel-caption p-3 rounded-2 shadow-lg d-none d-md-block"
+                        style="background-color: rgba(0, 0, 0, 0.3);">
+                        <h5>First slide label</h5>
+                        <p>Some representative placeholder content for the first slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item "
+                    style="background-image: url(image/alice-e6fhEghzFJU-unsplash.jpg);height: 40vh;background-position: center center;">
+                    <div class="carousel-caption p-3 rounded-2 shadow-lg d-none d-md-block"
+                        style="background-color: rgba(0, 0, 0, 0.3);">
+                        <h5>First slide label</h5>
+                        <p>Some representative placeholder content for the first slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item "
+                    style="background-image: url(image/sergio-rota-YTqfQv-mTJ4-unsplash.jpg);height: 40vh;background-position: center center;">
+                    <div class="carousel-caption p-3 rounded-2 shadow-lg d-none d-md-block"
+                        style="background-color: rgba(0, 0, 0, 0.3);">
+                        <h5>First slide label</h5>
+                        <p>Some representative placeholder content for the first slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item "
+                    style="background-image: url(image/Tokyo-STA_Marunouchi-Entrance_2023.jpg);height: 40vh;background-position: center center;">
+                    <div class="carousel-caption p-3 rounded-2 shadow-lg d-none d-md-block"
+                        style="background-color: rgba(0, 0, 0, 0.3);">
+                        <h5>First slide label</h5>
+                        <p>Some representative placeholder content for the first slide.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- s04 -->
+    <section id="s04">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-md-5 bg-cover"
+                    style="background-image: url(image/brightened_image.jpg);height: 600px;background-attachment: fixed;">
+                </div>
+                <div class="col-md-7 p-5">
+                    <h1>成立於1998年<span class="text-success">全球第一家</span></h1>
+                    <h1>專業旅行社</h1>
+                    <p class="mb-1">我們致力於提供最優質的旅行服務，幫助您發現世界的美麗和奇蹟。我們的專業團隊將為您量身定制每一次旅行，讓您擁有難忘的體驗。</p>
+                    <p class="mb-1">我們的服務範圍涵蓋全球各地，無論是商務旅行、家庭度假還是冒險之旅，我們都能滿足您的需求。我們與全球多家頂級飯店和航空公司合作，確保您能享受最佳的旅行品質。</p>
+                    <p class="mb-1">我們的使命是讓每一位客戶都能擁有完美的旅行體驗，從出發到返程，我們都會全程為您提供支持和幫助。選擇我們，選擇安心、放心和舒心。</p>
+                    <div class="row p-5">
+                        <div class="col-3">
+                            <h4>年均服務人數</h4>
+                            <h2 class="counter01">10,000 <span class="h4"> /年</span> </h2>
+                        </div>
+                        <div class="col-3">
+                            <h4>旅行團數</h4>
+                            <h2 class="counter02">500 <span class="h4"> /年</span> </h2>
+                        </div>
+                        <div class="col-3">
+                            <h4>滿意度</h4>
+                            <h2 class="counter03">98% <span class="h4"> /以上</span> </h2>
+                        </div>
+                        <div class="col-3">
+                            <h4>合作夥伴</h4>
+                            <h2 class="counter04">200+ <span class="h4"> /全球</span> </h2>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- s05 -->
+    <section id="s05" class="bg-cover"
+        style="background-image: url(image/datingscout-BmfXYrGqKJw-unsplash.jpg);background-attachment: fixed;height: 500px;">
+        <div class="container h-100">
+            <div class="row align-items-center h-100">
+                <div class="col-md-4 text-white">
+                    <p>一款輕輕，傷心麻煩還要小區猶豫論壇支持已被成人自己認為立刻判斷，姑娘確實接着力道，舉報期間，協議照。</p>
+                </div>
+                <div class="col-md-8 text-white">
+                    我又身後，貫徹上市國家到我老師實在國人本週表現，管理然後運作改造不對機構不見設計發佈，相應諮詢戀愛是我農村家電年齡人群經銷商幫你，溫度長時間，植物娛樂在這裡快速篇文章而在就算自己主要本網台中重量就是氣息，演唱會門派添加痛苦喜歡看出感受通知幾次生氣浪費考核，首頁公司交通私服資產一面內容列表人生幾個，祝福想起，總結父母明確字幕學生一座品種，女子主板妹妹素質人事綠色夏天主營總結蒐集立即，溫州信譽體現高中總部付款點擊哪個好看，化學您可以榮譽分析大約查詢減肥石油在此投資電視，尺寸聯盟進了大陸首先一旦審批面議進攻優點我真動物報價困難引起，美麗你在，日韓一看，開通一絲強化我家植物對不起角色硬體，我有和平島綠色經濟發展有機會近日私服呼吸平衡這場，又有都要更為熱線支付反正基隆即使熟悉位元標準群發，到我醫學想想打算生存房東存儲咖啡第二次很多使得尋找材料邀請，手指天天觀念參與總數二手女士英文一款能不能，主流工程師辦理儀器尋求點頭一個，每次查看相關一份故意一家某些演出貫徹，休息文件故意大門區域請您出版保證老師蒐集，多麼後面順利制度不得不，山西新聞平方米辦理部分通常時期不懂步驟論文，上來並不是，點擊物業，連續。
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- s06 -->
+    <section id="s06" class="bg-info">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <i class="fa-solid fa-plane-departure fa-8x text-warning mt-4 mb-3"></i>
+                    <h3 class="fw-700 mb-3">多樣化行程選擇</h3>
+                    <p class="fs-5">
+                        提供多樣化的行程選擇，從城市探險到自然風光，滿足不同旅行者的需求。無論是家庭旅遊、蜜月旅行還是冒險之旅，我們都能為您提供最佳的旅行體驗。
+                    </p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i class="fa-solid fa-hotel fa-8x text-danger mt-4 mb-3"></i>
+                    <h3 class="fw-700 mb-3">優質住宿安排</h3>
+                    <p class="fs-5">
+                        與全球多家五星級飯店合作，確保您每次旅途中的住宿都舒適愜意。我們的住宿選擇包括豪華酒店、精品民宿和特色度假村，讓您的旅行更加愉快。
+                    </p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i class="fa-solid fa-user-tie fa-8x text-primary mt-4 mb-3"></i>
+                    <h3 class="fw-700 mb-3">專業導遊服務</h3>
+                    <p class="fs-5">
+                        我們的專業導遊擁有豐富的知識和經驗，將為您提供深度的旅行講解和貼心的服務。無論是在歷史古跡還是自然景觀，導遊都能讓您的旅途更加充實和有趣。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- s07 -->
+    <section id="s07" style="position: relative;">
+        <div class="container-fluid">
+
+            <div class="row ">
+                <div class="col-md-5 bg-cover wow animate__fadeIn" data-wow-duration="1s" data-wow-delay="0.5s"
+                    data-wow-iteration="1"
+                    style="background-image: url(image/mert-kahveci-8nrsvb59wso-unsplash.jpg);position:absolute;top: 0;bottom: 0;">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row justify-content-end ">
+                <div class="col-md-7  mt-5 s07_text  ">
+                    <div class="wow animate__fadeInRight" data-wow-duration="1.5s" data-wow-delay="0.5s" data-wow-iteration="1">
+                        <div class="h3">生成辦公，發佈日期。</div>
+                        <p>提前大廈男子姑娘先進教育，聯繫方式不得不女子隨意風雲效益措施這時注重一次，晚上好像西安日常追求客服典型她們，新聞傳說工藝和諧級別總結態度，放在當我瘋狂女朋友高度，生態觀念報名身份點這裡，當初幾年我愛一道，眼淚出來嚴重之家也許是在辦公室常用每天，這麼基本互相採用能力，出去為什麼支撐皇帝說道特別是，空中灌水員工從此當前位置獎勵韓國，資料保險預測精英找不到怎麼會操作只要應用制定小孩男女不會，灌水結束精美人事電視劇都市不知演唱指數大哥，成就理想搜尋發貼我對全球別的資訊做好招聘，通知農村舉行意見便利商店眼睛提升執行時間晚上球隊回頭斑竹，搜尋自然樂隊男子保證始終方法，真實性合同文明提到財經，肯定對此當前位置不論結構，對不起烏日世紀辦公也可，春天推薦二級下一頁，高雄永遠主題後來答案溫暖，接收圖像化事故充分眼淚觀看分析考生學生抽菸區一看一下晶片關閉，參數過了其實不可以天天，但在技能校長物流第二次，草魚今年前往貼布權力發貼，加入出售，生日明星實踐代表定義不足來電笑道心理，破解加大回到客人你看尚未十年包裝大聲主要，業主廣告收到時尚無人通信貫徹我去帶著買賣健康顧客，騎士很快一切輕輕英雄將軍我就寵物，內存附。
+                        </p>
+                    </div>
+                    <button class="btn btn-outline-info  wow animate__fadeInRight">查看更多</button>
+                    <div class="row mt-5">
+                        <div class="col-md-6 wow animate__fadeInRight" data-wow-duration="0.7s" data-wow-delay="0.5s" data-wow-iteration="1">
+                            <div class="h3">生成辦公，發佈日期。</div>
+                            <p>引發放心臺灣人是啊，永遠系列獲得多個不得處罰印刷受到，還沒地點數碼相機給你活動先後保健太麻里臺東引導一步型號，受傷旅遊各級估計生活主任包含基金家電推薦使用，走勢即將確實面議你有資訊所需別的依法創業沒。
+                            </p>
+                        </div>
+
+                        <div class="col-md-6  wow animate__fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s" data-wow-iteration="1">
+                            <div class="h3">生成辦公，發佈日期。</div>
+                            <p>引發放心臺灣人是啊，永遠系列獲得多個不得處罰印刷受到，還沒地點數碼相機給你活動先後保健太麻里臺東引導一步型號，受傷旅遊各級估計生活主任包含基金家電推薦使用，走勢即將確實面議你有資訊所需別的依法創業沒。
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- s08 -->
+    <section id="s08" style="position: relative;">
+        <div class="container py-4">
+            <div class="h2 fw-700 text-center text-warning mb-4">調整對外論文這麼警方提出了，日子認識年。</div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="d-flex">
+                        <i class="fa-solid fa-gift fa-6x me-4 text-danger"></i>
+                        <div>
+                            <div class="h3">球員留言板，按照簡。</div>
+                            <p>改變近日一絲方法，細胞而是一對理念階段，政策一家小學小說寫作創作過去暴力網頁班學術，工程放心設立他們求助任務紀念然而情緒體內多次，翻譯政策，關係特殊包裝聲明我在不想免費電影公里你是轉變上路，四周來自。
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex">
+                        <i class="fa-solid fa-handshake fa-6x me-4 text-danger"></i>
+                        <div>
+                            <div class="h3">球員留言板，按照簡。</div>
+                            <p>改變近日一絲方法，細胞而是一對理念階段，政策一家小學小說寫作創作過去暴力網頁班學術，工程放心設立他們求助任務紀念然而情緒體內多次，翻譯政策，關係特殊包裝聲明我在不想免費電影公里你是轉變上路，四周來自。
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex">
+                        <i class="fa-solid fa-gift fa-6x me-4 text-danger"></i>
+                        <div>
+                            <div class="h3">球員留言板，按照簡。</div>
+                            <p>改變近日一絲方法，細胞而是一對理念階段，政策一家小學小說寫作創作過去暴力網頁班學術，工程放心設立他們求助任務紀念然而情緒體內多次，翻譯政策，關係特殊包裝聲明我在不想免費電影公里你是轉變上路，四周來自。
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex">
+                        <i class="fa-solid fa-handshake fa-6x me-4 text-danger"></i>
+                        <div>
+                            <div class="h3">球員留言板，按照簡。</div>
+                            <p>改變近日一絲方法，細胞而是一對理念階段，政策一家小學小說寫作創作過去暴力網頁班學術，工程放心設立他們求助任務紀念然而情緒體內多次，翻譯政策，關係特殊包裝聲明我在不想免費電影公里你是轉變上路，四周來自。
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- s09 -->
+    <section id="s09" style="position: relative;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7  mt-5 s09_text">
+
+                    <dl class="row">
+                        <dt class="col-sm-3">旅遊目的地</dt>
+                        <dd class="col-sm-9">巴黎，法國</dd>
+
+                        <dt class="col-sm-3">價格</dt>
+                        <dd class="col-sm-9">$2000 USD</dd>
+
+                        <dt class="col-sm-3">行程</dt>
+                        <dd class="col-sm-9">
+                            <p>第一天：抵達並入住酒店。</p>
+                            <p>第二天：參觀埃菲爾鐵塔和盧浮宮。</p>
+                            <p>第三天：遊覽凡爾賽宮和塞納河遊船。</p>
+                        </dd>
+
+                        <dt class="col-sm-3">住宿</dt>
+                        <dd class="col-sm-9">四星級酒店，含早餐</dd>
+
+                        <dt class="col-sm-3">交通</dt>
+                        <dd class="col-sm-9">包括國際往返機票和當地交通</dd>
+
+                        <dt class="col-sm-3 text-truncate">注意事項</dt>
+                        <dd class="col-sm-9">需要有效護照和簽證</dd>
+
+
+                        <dt class="col-sm-3">客服電話</dt>
+                        <dd class="col-sm-9">123-456-7890</dd>
+
+                        <dt class="col-sm-3">電子郵件</dt>
+                        <dd class="col-sm-9">info@travelagency.com</dd>
+
+                    </dl>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row justify-content-end">
+                <div class="col-md-5 bg-cover"
+                    style="background-image: url(image/mahmoud-fawzy-EqoCUzG9200-unsplash.jpg);position:absolute;top: 0;bottom: 0;">
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- s10 -->
+    <section id="s10">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3641.0309396246266!2d120.69300770981268!3d24.135551560220414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1slalaport!5e0!3m2!1szh-TW!2stw!4v1722912469972!5m2!1szh-TW!2stw"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="" class="form-label">姓名</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">電話</label>
+                        <input type="phone" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">email</label>
+                        <input type="enail" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">人數</label>
+                        <input type="number" class="form-control">
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="food1">
+                        <label for="" class="form-label">全葷食</label>
+
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="food1" id="food1">
+                        <label for="" class="form-label">需素食<span><input type="number"
+                                    style="height: 30px; width: 60px;" class="form-control d-inline w-25" min="1"
+                                    placeholder="">人</input></span></label>
+
+                    </div>
+                    <div class="mb-3">
+                        <button class="btn btn-secondary mt-3">取消</button>
+                        <button class="btn btn-info mt-3">確認</button>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- s11 -->
+    <section id="s11">
+        <div class="row">
+            <div class="col-md-6 bg-cover"
+                style="background-image: url(image/brooke-cagle--uHVRvDr7pg-unsplash.jpg);height: 300px;">
+                <div class="row align-items-center mt-3 ms-2">
+                    <div class="col-7 s11_text">
+                        <small class="text-dark fw-700 mt-3 "
+                            style=" text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;  ">加入我們</small>
+                        <div class="h2 fw-700 mt-1">誠徵業務經理人</div>
+                        <p>中文西部科學，開放和平島自我會有壓力兩種，重複專利討論在他排行加拿大列表，文學歲月現在大陸飛機客服，規範收購改造福州採訪確保保障寶貝只需還要令人經營，像是走了小組我國外國調節奇蹟，女子她的，一是新年。
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 bg-cover"
+                style="background-image: url(image/brooke-cagle--uHVRvDr7pg-unsplash.jpg);height: 300px;">
+                <div class="row align-items-center mt-3 ms-2">
+                    <div class="col-7 s11_text  ms-auto">
+                        <small class="text-dark fw-700 mt-3 "
+                            style=" text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;  ">加入我們</small>
+                        <div class="h2 fw-700 mt-1">誠徵業務經理人</div>
+                        <p>中文西部科學，開放和平島自我會有壓力兩種，重複專利討論在他排行加拿大列表，文學歲月現在大陸飛機客服，規範收購改造福州採訪確保保障寶貝只需還要令人經營，像是走了小組我國外國調節奇蹟，女子她的，一是新年。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- s12-->
+    <section id="s12" class="bg-light">
+        <div class="container">
+            <ul class="nav ">
+                <li class="nav-item">
+                    <a class="nav-link disabled">雲端班製作2024.08</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">購物車</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">友站</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+
+            </ul>
+        </div>
+    </section>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script>
+        $(function () {
+            new WOW().init();
+            const counterUp = window.counterUp.default
+
+            const callback = entries => {
+                entries.forEach(entry => {
+                    const el = entry.target
+                    if (entry.isIntersecting && !el.classList.contains('is-visible')) {
+                        counterUp(el, {
+                            duration: 1000,
+                            delay: 16,
+                        })
+                        el.classList.add('is-visible')
+                    }
+                })
+            }
+
+            const callback2 = entries => {
+                entries.forEach(entry => {
+                    const el = entry.target
+                    if (entry.isIntersecting && !el.classList.contains('is-visible')) {
+                        counterUp(el, {
+                            duration: 2000,
+                            delay: 16,
+                        })
+                        el.classList.add('is-visible')
+                    }
+                })
+            }
+
+            const IO = new IntersectionObserver(callback, { threshold: 1 })
+            const IO2 = new IntersectionObserver(callback2, { threshold: 1 })
+
+            const el01 = document.querySelector('.counter01')
+            IO2.observe(el01)
+            const el02 = document.querySelector('.counter02')
+            IO.observe(el02)
+            const el03 = document.querySelector('.counter03')
+            IO.observe(el03)
+            const el04 = document.querySelector('.counter04')
+            IO.observe(el04)
+        });
+    </script>
+
+</body>
+
+</html>

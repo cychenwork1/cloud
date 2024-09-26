@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="css/all.min.css">
+
+    <link rel="stylesheet" href="css/myall.css">
+
+    <style>
+        .timeline-section {
+            position: relative;
+        }
+
+        .timeline-section:before {
+            position: absolute;
+            content: "";
+            top: 10px;
+            bottom: 10px;
+            width: 5px;
+            background-color: var(--mycolor08);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .timeline-section-pointer {
+            position: relative;
+        }
+
+        .timeline-section-pointer:before {
+            position: absolute;
+            content: "";
+            width: 20px;
+            height: 20px;
+
+            /* border: 3px solid var(--mycolor11); */
+            background-color: var(--mycolor11);
+            border-radius: 50%;
+            left: 50%;
+            top: 10px;
+            transform: translateX(-50%);
+        }
+
+        .timeline-section-pointer:hover::before {
+            width: 40px;
+            height: 40px;
+            border: 6px solid var(--mycolor12);
+
+        }
+
+
+        @media screen and (max-width: 768px) {
+            .timeline-section:before {
+                left: -10px;
+                /* display:none; */
+            }
+
+            .timeline-section-pointer:before {
+
+                left: 3px;
+                /* display:none; */
+
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <!-- <i class="bi bi-tree-fill text-danger fs-4"></i> -->
+                <i class="fa-solid fa-tree text-danger"></i>
+
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="20240701-tour.html">
+                            <!-- <i class="bi bi-houses"></i> -->
+                            <i class="fa-solid fa-house-chimney text-primary"></i>
+                            首頁</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="20240702 tour about.html">
+                            <i class="fa-solid fa-link text-warning"></i>
+                            關於我們</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <i class="fa-solid fa-mountain-sun text-success"></i>
+                            景點介紹
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="20240702 tour product.html">日本</a></li>
+                            <li><a class="dropdown-item" href="20240702 tour product2.html">甜點</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">其他</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled">不可用</a>
+                    </li>
+                </ul>
+
+
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="banner bg-info bg-cover d-none d-md-block" style="height:260px;background-image: linear-gradient(0deg,rgba(87, 150, 179, 0.3),rgba(104, 186, 201, 0.7)),url(image/andy-holmes-0LJCEORiYg8-unsplash.jpg);
+    "></div>
+
+    <div class="container">
+        <div class="timeline-section">
+            <div class="row align-items-center timeline-section-pointer">
+                <div class="col-md-6 mt-3 text-center ">
+                    <div class="h3 text-danger fw-700">關於我們 <small class="text-muted">About us</small></div>
+                    <p class="fw-500">公司背景和歷史</p>
+                    <ul class="list-unstyled fw-500">
+                        <li>我們的旅行社成立於1990年，擁有多年的旅遊業經驗。</li>
+                        <li> 我們致力於提供最優質的旅行體驗，幫助客戶探索世界各地的美麗和文化。</li>
+                    </ul>
+                </div>
+                <div class="col-md-6 bg-cover mt-3 "
+                    style="background-image: url(image/annie-spratt-AFB6S2kibuk-unsplash.jpg);height:260px;">
+
+                </div>
+            </div>
+            <div class="row align-items-center flex-row-reverse  timeline-section-pointer">
+                <div class="col-md-6 mt-3 text-center ">
+                    <div class="h3 text-warning fw-700">公司資訊 <small class="text-muted">Inc. Info.</small></div>
+                    <p class="fw-500">公司基本資料</p>
+                    <ul class="list-unstyled fw-500">
+                        <li>地址:台北市中正區北平西路3號</li>
+                        <li>電話:(02)2222-1111</li>
+                        <li>營業時段:9:00~20:00</li>
+
+                    </ul>
+                </div>
+                <div class="col-md-6 mt-3 bg-cover"
+                    style="height:260px;background-image: url(image/andrew-varnum-QMzs6erjVvk-unsplash.jpg);">
+                </div>
+            </div>
+            <div class="row align-items-center timeline-section-pointer">
+                <div class="col-md-6 mt-3 text-center">
+                    <div class="h3 text-warning fw-700">我們的價值觀和使命 <small class="text-muted">Our Task</small></div>
+                    <p class="fw-500">本旅行社想帶給顧客的體驗</p>
+                    <ul class="list-unstyled fw-500">
+                        <li>我們的價值觀包括客戶至上、卓越服務、社會責任和永續發展。</li>
+                        <li>我們的使命是通過提供優質的旅行體驗來豐富客戶的生活，並對社區和環境做出積極貢獻。</li>
+                       
+
+                    </ul>
+                </div>
+                <div class="col-md-6 mt-3 bg-cover"
+                    style="height:260px;background-image: url(image/spencer-davis-dnQ5sauaFz0-unsplash.jpg);">
+                </div>
+            </div>
+            <div class="row align-items-center flex-row-reverse timeline-section-pointer">
+                <div class="col-md-6 mt-3 text-center">
+                    <div class="h3 text-warning fw-700">團隊人員<small class="text-muted">Staff</small></div>
+                    <p class="fw-500">本旅行社的服務團隊</p>
+                    <ul class="list-unstyled fw-500 ">
+                        <li>我們的團隊由一群熱愛旅行、專業且充滿熱情的旅遊專家組成。</li>
+                        <li>他們來自不同的文化背景，擁有豐富的旅遊經驗和深厚的目的地知識，為客戶提供度身定制的旅行建議和服務。</li>
+                        
+
+                    </ul>
+                </div>
+                <div class="col-md-6 mt-3 bg-cover"
+                    style="height:260px;background-image: url(image/brooke-cagle--uHVRvDr7pg-unsplash.jpg);">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <footer class="footer text-center text-lg-start bg-body-tertiary text-muted">
+
+        <!-- Section: Links  -->
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            <i class="fas fa-gem me-3"></i>xx旅行社
+                        </h6>
+                        <p>
+                            本公司旅遊均投保意外險及旅遊平安險，詳情請參閱網頁內容。
+                        </p>
+                    </div>
+
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Products
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">Angular</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">React</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Vue</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Laravel</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            連結
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">收費標準</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">設定</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">訂單</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">幫助</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">聯絡我們</h6>
+                        <p><i class="fas fa-home me-3"></i> 台北市中正區北平西路3號</p>
+                        <p>
+                            <i class="fas fa-envelope me-3"></i>
+                            info@example.com
+                        </p>
+                        <p><i class="fas fa-phone me-3"></i>(02)2222-1111</p>
+                        <p><i class="fas fa-print me-3"></i>(02)2222-1122</p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.1);">
+            © 2024 Copyright:
+            <a class="text-muted fw-700" href="#">CYChen</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

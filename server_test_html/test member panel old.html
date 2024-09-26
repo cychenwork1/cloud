@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/myall.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <style>
+        .page-link {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <section id="s02" class="bg-dark">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+
+                        會員管理控制台
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="20240730 hotel.html"
+                                    target="_blank">首頁</a>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    高級vip功能
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item disabled" href="20240718 product.html" id="vip1"
+                                            target="_blank">產品建檔</a></li>
+                                    <li><a class="dropdown-item disabled" href="20240718 table.html" id="vip2"
+                                            target="_blank">產品管理</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item disabled" href="20240820 member control panel.html"
+                                            id="vip3">會員管理</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+
+                        <div>
+
+                            <i class="fa-solid fa-user fa-2x d-none" style="color: rgb(82, 82, 82)" id="fa-user"></i>
+                            <span class="h3 text-success " id="login_hint">會員未登入 </span>
+                            <span class="h3 text-warning d-none" id="s02_login_username"> xxx</span>
+                        </div>
+                        <div>
+                            <button class="btn btn-success d-none btn-danger ms-3" id="logout_btn">登出</button>
+                        </div>
+                    </div>
+            </nav>
+        </div>
+    </section>
+
+
+    <div class="container">
+        <div class="row ">
+            <div class="col-12">
+                <div class="card shadow-lg">
+                    <div class="dard-body">
+                        <table class="table table-rwd table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>會員編號</th>
+                                    <th>會員名稱</th>
+                                    <th>會員Email</th>
+                                    <th colspan="5">會員興趣</th>
+
+                                </tr>
+                            </thead>
+                            <tbody id="datalist">
+                                <tr>
+                                    <td data-th="會員編號">001</span></td>
+                                    <td data-th="會員名稱">美式咖啡</span></td>
+                                    <td data-th="會員Email">100</span></td>
+                                    <td data-th="會員興趣1">10</span></td>
+                                    <td data-th="會員興趣2">10</span></td>
+                                    <td data-th="會員興趣3">10</span></td>
+                                    <td data-th="會員興趣4">10</span></td>
+                                    <td data-th="會員興趣5">10</span></td>
+
+
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination pagination-lg justify-content-center" id="pagelist">
+                    <li class="page-item disabled" onclick="drawTable(xxx)">
+                        <a class="page-link">上一頁</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">下一頁</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+    </div>
+
+
+
+    <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header  bg-warning">
+                    <div class=" modal-title fs-5 h3 text-center fw-700 " id="exampleModalLabel">會員更新</div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-12">
+                        <div class="mb-3">
+                            <label for="upd_username" class="form-label">帳號</label>
+                            <input type="text" name="upd_username" id="upd_username" class="form-control " disabled
+                                placeholder="字數3~8">
+                        </div>
+                        <div class="mb-3">
+                            <label for="upd_email" class="form-label">e-mail</label>
+                            <input type="text" name="upd_email" id="upd_email" class="form-control is-valid"
+                                placeholder="字數3~15">
+                            <div class="valid-feedback">符合規定</div>
+                            <div class="invalid-feedback">不符合規定</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                        id="btn_cancel_update">關閉</button>
+                    <button type="button" class="btn btn-primary" id="btn_confirm_update">更新</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/sweetalert2@11.js"></script>
+    <script>
+        var flag_upd_email = true;
+        var u_id;
+        var newdata = [];
+        $(document).ready(function () {
+
+           
+
+               
+
+       
+
+
+                $.ajax({
+                    type: "get",
+                    url: "test-member-read-api.php",
+                    dataType: "json",
+                    success: showdata_check_uid,
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        console.log(xhr.status);
+                        console.log(thrownError);
+                    }
+                });
+
+
+
+
+            
+
+
+         
+
+       
+        });
+
+        function showdata_Read(data) {
+            console.log(data);
+            // 重構data產生newdata
+            data.data.forEach(function (item, key) {
+                // console.log(key);
+                // console.log(item);
+                if (key % 10 == 0) {
+                    newdata.push([]);
+                }
+                var page = parseInt(key / 10);
+                newdata[page].push(item);
+            });
+            console.log(newdata);
+
+            drawTable(0);
+
+
+
+
+        
+
+
+
+        }
+
+
+
+        function showdata_check_uid(data) {
+            if (data.state) {
+
+
+                var page = 0; 
+                function drawTable(page) {
+                    $("#datalist").empty();
+
+                    newdata[page].forEach(function (item) {
+
+                        var isactive;
+                        var state_color;
+                        var state_text;
+                        var level_text;
+                        if (fav_read != "") {
+                            item.fav_read = "閱讀";
+                        }
+                        if (fav_read != "") {
+                            item.fav_ball = "打球";
+                        }
+                        if (fav_read != "") {
+                            item.fav_movie = "看電影";
+                        }
+                        if (fav_read != "") {
+                            item.fav_climb = "爬山";
+                        }
+                        if (fav_read != "") {
+                            item.fav_shopping = "逛街";
+                        }
+
+
+                        var strHTML = '<tr> <td data-th="會員編號">' + item.id + '</span></td> <td data-th="會員名稱">' + item.username + '</span></td> <td data-th="會員Email">' + item.email + '</span></td> <td data-th="會員興趣1">' + item.fav_read + '</span></td> <td data-th="會員興趣2">' + item.fav_ball + '</span></td> <td data-th="會員興趣3">' + item.fav_movie + '</span></td> <td data-th="會員興趣4">' + item.fav_climb + '</span></td> <td data-th="會員興趣5">' + item.fav_shopping + '</span></td> </tr>';
+                        $("#datalist").append(strHTML);
+
+
+                    });
+                    //產生頁碼
+
+
+                    //會員狀態監聽
+
+
+
+
+
+
+                }
+            }
+
+
+
+
+
+
+
+            $("#pagelist").empty();
+
+            var pgup;
+            var pgdn;
+            if (page == 0) {
+                pgup = '<li class="page-item disabled" > <a class="page-link">上一頁</a> </li>';
+            } else {
+                pgup = '<li class="page-item " onclick="drawTable(' + (page - 1) + ')"> <a class="page-link">上一頁</a> </li>';
+            }
+
+            if (page == newdata.length - 1) {
+                pgdn = '<li class="page-item disabled" > <a class="page-link">下一頁</a> </li>'
+            } else {
+                pgdn = '<li class="page-item" onclick="drawTable(' + (page + 1) + ')"> <a class="page-link">下一頁</a> </li>'
+
+            }
+
+            $("#pagelist").append(pgup);
+
+            for (var i = 0; i < newdata.length; i++) {
+                var thisPage = i + 1;
+                var strHtml;
+                if (thisPage == page + 1) {
+                    strHtml = '<li class="page-item active" onclick="drawTable(' + (thisPage - 1) + ')"><a class="page-link" href="#">' + thisPage + '</a></li>';
+                } else {
+                    strHtml = '<li class="page-item" onclick="drawTable(' + (thisPage - 1) + ')"><a class="page-link" href="#">' + thisPage + '</a></li>';
+                }
+                // if (thisPage == page + 1) {
+                //     strHtml = '<li class="page-item active"><a class="page-link" href="#" onclick="drawTable(' + (thisPage - 1) + '); event.preventDefault();">' + thisPage + '</a></li>';
+                // } else {
+                //     strHtml = '<li class="page-item"><a class="page-link" href="#" onclick="drawTable(' + (thisPage - 1) + '); event.preventDefault();">' + thisPage + '</a></li>';
+                // }
+                $("#pagelist").append(strHtml);
+            }
+
+            $("#pagelist").append(pgdn);
+
+            console.log(page);
+
+        }
+
+
+        //引用用
+        function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+    </script>
+</body>
+
+</html>

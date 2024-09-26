@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>產品管理</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/myall.css">
+    <style>
+
+    </style>
+
+
+</head>
+
+<body>
+    <section id="s02" class="bg-dark">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+
+                        產品管理控制台
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="20240730 hotel.html"
+                                    target="_blank">首頁</a>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    高級vip功能
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item disabled" href="20240718 product.html" id="vip1"
+                                            target="_blank">產品建檔</a></li>
+                                    <li><a class="dropdown-item disabled" href="20240718 table.html" id="vip2"
+                                            target="_blank">產品管理</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item disabled" href="20240820 member control panel.html"
+                                            id="vip3">會員管理</a></li>
+                                    <li><a class="dropdown-item disabled" href="20240827 chart.html" id="vip4"
+                                            target="_blank">會員統計報表</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+
+                        <div>
+
+                            <i class="fa-solid fa-user fa-2x d-none" style="color: rgb(82, 82, 82)" id="fa-user"></i>
+                            <span class="h3 text-success " id="login_hint">會員未登入 </span>
+                            <span class="h3 text-warning d-none" id="s02_login_username"> xxx</span>
+                        </div>
+                        <div>
+                            <button class="btn btn-success d-none btn-danger ms-3" id="logout_btn">登出</button>
+                        </div>
+                    </div>
+            </nav>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="row ">
+            <div class="col-12">
+                <div class="card shadow-lg">
+                    <div class="dard-body">
+                        <table class="table table-rwd table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>編號</th>
+                                    <th>國家名稱</th>
+                                    <th>地點名稱</th>
+                                    <th>出發日期</th>
+                                    <th>旅遊天數</th>
+                                    <th>價格</th>
+                                    <th>最大出團人數</th>
+                                    <th>產品備註</th>
+                                    <th>建檔時間</th>
+                                </tr>
+                            </thead>
+                            <tbody id="mydata">
+                                <tr>
+                                    <td data-th="編號">001</span></td>
+                                    <td data-th="國家名稱">美國</span></td>
+                                    <td data-th="地點名稱">夏威夷</span></td>
+                                    <td data-th="出發日期">2024/07/18</span></td>
+                                    <td data-th="旅遊天數">5</span></td>
+                                    <td data-th="價格">60000</span></td>
+                                    <td data-th="最大出團人數">20</span></td>
+                                    <td data-th="產品備註">aaaa</span></td>
+                                    <td data-th="建檔時間">202407180505</span></td>
+                                    <td>
+                                        <button class="btn btn-success me-2" data-bs-toggle="modal"
+                                            data-bs-target="#updateModal" data-id="" data-name="" data-location=""
+                                            data-d_date="" data-days="" data-num="" data-remark=""
+                                            id="btn_update">更新</button>
+                                        <button class="btn btn-danger" id="btn_delete" data-id="">刪除</button>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+
+    <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header  bg-warning">
+                    <div class=" modal-title fs-5 h3 text-center fw-700 " id="exampleModalLabel">產品更新</div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3 form-floating">
+                        <input type="text" id="p_name" class="form-control is-valid" list="p_name_list" placeholder="">
+                        <label for="p_name" class="form-label">產品名稱(字數2~6)</label>
+                        <datalist id="p_name_list">
+                            <option value="美式咖啡"></option>
+                            <option value="美式咖啡2"></option>
+                            <option value="美式咖啡3"></option>
+                        </datalist>
+                        <div class="valid-feedback">符合規定</div>
+                        <div class="invalid-feedback">不符合規定</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="p_price" class="form-label">產品價格(1~1000)</label>
+                        <input type="number" class="form-control is-valid" id="p_price" min="0" max="1000" value="">
+                        <div class="valid-feedback">符合規定</div>
+                        <div class="invalid-feedback">不符合規定</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="p_num" class="form-label">產品數量(1~100)</label>
+                        <input type="number" class="form-control is-valid" id="p_num" min="0" max="100" value="">
+                        <div class="valid-feedback">符合規定</div>
+                        <div class="invalid-feedback">不符合規定</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="p_remark" class="form-label ">產品備註(字數1~10)</label>
+                        <textarea class="form-control is-valid" id="p_remark" rows="5"></textarea>
+                        <div class="valid-feedback">符合規定</div>
+                        <div class="invalid-feedback">不符合規定</div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                        id="btn_cancel_update">關閉</button>
+                    <button type="button" class="btn btn-primary" id="btn_confirm_update">更新</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/sweetalert2@11.js"></script>
+    <script>
+        var flag_p_name = true;
+        var flag_p_price = true;
+        var flag_p_num = true;
+        var flag_p_remark = true;
+        var u_id;
+
+        $(function () {
+            if (getCookie("uid01") != "") {
+                var dataJSON = {};
+                dataJSON["uid01"] = getCookie("uid01");
+
+                console.log(JSON.stringify(dataJSON));
+
+                $.ajax({
+                    type: "POST",
+                    url: "member-login-check-uid01-api.php",
+                    data: JSON.stringify(dataJSON),
+                    dataType: "json",
+                    success: showdata_check_uid,
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        console.log(xhr.status);
+                        console.log(thrownError);
+                    }
+                });
+            } else {
+                console.log("無cookie");
+                Swal.fire({
+                    title: '請登入以使用',
+                    icon: 'warning',
+                    confirmButtonText: '確定'
+                }).then(function () {
+                    location.href = "20240730 hotel.html"; // 跳轉到登入頁面或其他指定頁面
+                });
+            }
+
+            $("#logout_btn").click(function () {
+                setCookie("uid01", "", -1);
+                sessionStorage.setItem("logout", "true");
+                location.reload();
+
+            });
+
+            if (sessionStorage.getItem("logout") === "true") {
+                sessionStorage.removeItem("logout"); // 顯示訊息後清除標記
+                Swal.fire("已登出"); // 顯示已登出訊息
+                $("#s02_login_username").text(會員未登入);
+                $("#login_hint").show();
+
+
+                $("#s02_login_username").addClass("d-none");
+                $("#logout_btn").addClass("d-none");
+                $("#fa-user").addClass("d-none");
+
+            }
+
+
+
+
+            $.ajax({
+                type: "GET",
+                url: "20240716 read_v2.php",
+                dataType: "json",
+                async: false,
+                success: showdata_read,
+                error: function () {
+                    alert("error-20240716 read_v2.php");
+                }
+
+
+            });
+            $("#mydata #btn_update").click(function () {
+                console.log($(this).data("id"));
+                console.log($(this).data("name"));
+                console.log($(this).data("price"));
+                console.log($(this).data("num"));
+                console.log($(this).data("remark"));
+
+                u_id = $(this).data("id");
+                $("#p_name").val($(this).data("name"));
+                $("#p_price").val($(this).data("price"));
+                $("#p_num").val($(this).data("num"));
+                $("#p_remark").val($(this).data("remark"));
+            });
+
+            $("#btn_cancel_update").click(function () {
+
+                $("#p_name").addClass("is-valid");
+                $("#p_price").addClass("is-valid");
+                $("#p_num").addClass("is-valid");
+                $("#p_remark").addClass("is-valid");
+
+                $("#p_name").removeClass("is-invalid");
+                $("#p_price").removeClass("is-invalid");
+                $("#p_num").removeClass("is-invalid");
+                $("#p_remark").removeClass("is-invalid");
+
+            });
+
+            // $("#mydata #btn_delete").click(function () {
+            //     console.log($(this).data("id"));
+
+
+            //     u_id = $(this).data("id");
+
+            // });
+
+
+            $("#p_name").bind("input propertychange", function () {
+                if ($(this).val().length > 1 && $(this).val().length < 7) {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_p_name = true;
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_p_name = false;
+                }
+            });
+
+            $("#p_price").bind("input propertychange", function () {
+                if ($(this).val() > 0 && $(this).val() < 1001) {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_p_price = true;
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_p_price = false;
+                }
+            });
+
+            $("#p_num").bind("input propertychange", function () {
+                if ($(this).val() > 0 && $(this).val() < 101) {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_p_num = true;
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_p_num = false;
+                }
+            });
+
+            $("#p_remark").bind("input propertychange", function () {
+                if ($(this).val().length > 0 && $(this).val().length < 11) {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_p_remark = true;
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_p_remark = false;
+                }
+            });
+
+
+            $("#btn_confirm_update").click(function () {
+
+
+                if (flag_p_name && flag_p_price && flag_p_num && flag_p_remark == true) {
+                    console.log("uid " + u_id);
+                    console.log("flag_p_name " + flag_p_name);
+                    console.log("flag_p_price " + flag_p_price);
+                    console.log("flag_p_num " + flag_p_num);
+                    console.log("flag_p_remark " + flag_p_remark);
+
+                    var dataJSON = {};
+                    dataJSON["id"] = u_id;
+                    dataJSON["name"] = $('#p_name').val();
+                    dataJSON["price"] = $('#p_price').val();
+                    dataJSON["num"] = $('#p_num').val();
+                    dataJSON["remark"] = $('#p_remark').val();
+
+
+                    console.log(JSON.stringify(dataJSON));
+
+                    $.ajax({
+                        type: "POST",
+                        url: "20240716 update.php",
+                        data: JSON.stringify(dataJSON),
+                        contentType: "application/json,charset=utf-8",
+                        dataType: "json",
+                        success: showdata_update,
+                        error: function () {
+                            alert("error-20240716 update.php");
+                        }
+
+                    });
+
+
+
+
+
+                } else {
+                    alert("欄位有錯，請修正!");
+                }
+
+
+            });
+
+
+            $("#mydata #btn_delete").click(function () {
+
+                if (confirm("是否確認刪除Id" + $(this).data("id"))) {
+
+                    console.log($(this).data("id"));
+
+                    var dataJSON = {};
+                    dataJSON["id"] = $(this).data("id");
+
+
+
+                    console.log(JSON.stringify(dataJSON));
+
+                    $.ajax({
+                        type: "POST",
+                        url: "20240718 delete.php",
+                        data: JSON.stringify(dataJSON),
+                        contentType: "application/json,charset=utf-8",
+                        dataType: "json",
+                        success: showdata_delete,
+                        // error: function () {
+                        //     alert("error-20240718 delete.php");
+                        // }
+                        error: function (xhr, status, error) {
+                            // 處理錯誤
+                            alert("Error: " + xhr.responseText);
+                        }
+
+                    });
+
+                }
+            });
+
+        });
+
+        function showdata_read(data) {
+            console.log(data);
+
+
+
+            $("#mydata").empty();
+            console.log(data);
+
+
+
+            data.data.forEach(function (item, key) {
+                // console.log(key);
+
+                // var strHTML2 = '<div class="col-lg-4"> <div class="card"> <img src="' + item.ImagePath + '" class="card-img-top" alt=""> <div class="card-body"> <div class="card-text h3 fw-900 text-primary">' + item.ProductName + '</div> <div class="card-text h4 fw-900">價格: ' + item.Price + '/片</div> <div class="card-text"><span class="h4 fw-900">原料:</span>  ' + ingredientsHTML + '</div> <div class="card-text h5 fw-900 mt-2">簡介: <span class="fw-400">' + item.Description + '</span></div> <a href="20240701-cake-details.html" target="_blank" class="btn btn-warning w-100 my-3">加入購物</a> </div> </div> </div>';
+
+
+                var strHTML2 = '<tr><td data-th="商品編號">' + item.Id + '</span></td> <td data-th="產品名稱">' + item.Name + '</span></td> <td data-th="產品價格">' + item.Price + '</span></td> <td data-th="產品數量">' + item.Num + '</span></td> <td data-th="產品備註">' + item.Remark + '</span></td> <td data-th="建檔時間">' + item.Created_at + '</span></td> <td> <button class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#updateModal" data-id="' + item.Id + '" data-name="' + item.Name + '" data-price="' + item.Price + '" data-num="' + item.Num + '" data-remark="' + item.Remark + '"  id="btn_update">更新</button> <button class="btn btn-danger" id="btn_delete" data-id="' + item.Id + '" >刪除</button> </td></tr>'
+                var strHTML = '<tr> <td data-th="編號">' + item.Id + '</span></td> <td data-th="國家名稱">' + item.Name + '</span></td> <td data-th="地點名稱">' + item.Location + '</span></td> <td data-th="出發日期">' + item.D_Date + '</span></td> <td data-th="旅遊天數">' + item.Days + '</span></td> <td data-th="價格">' + item.Price + '</span></td> <td data-th="最大出團人數">' + item.Num + '</span></td> <td data-th="產品備註">' + item.Remark + '</span></td> <td data-th="建檔時間">' + item.Created_at + '</span></td> <td> <button class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#updateModal" data-id="' + item.Id + '" data-name="' + item.Name + '" data-location="' + item.Location + '" data-d_date="' + item.D_Date + '"  data-days="' + item.Days + '"data-price="' + item.Price + '" data-num="' + item.Num + '" data-remark="' + item.Remark + '" id="btn_update">更新</button> <button class="btn btn-danger" id="btn_delete" data-id="">刪除</button> </td> </tr>';
+
+
+
+
+
+                $("#mydata").append(strHTML);
+
+            });
+
+        }
+
+        function showdata_update(data) {
+            console.log(data);
+            // alert("新增成功");
+            if (data.state) {
+                // alert(data.message);
+                Swal.fire({
+                    title: data.message,
+                    showDenyButton: false,
+                    showCancelButton: false,
+                    confirmButtonText: "確認",
+                    denyButtonText: `Don't save`
+                }).then((result) => {
+                    /* Read more about isConfirmed, isDenied below */
+                    if (result.isConfirmed) {
+                        Swal.fire("saved", "", "success").then(() => {
+                            location.href = "20240718 table.html";
+                        });
+                    } else if (result.isDenied) {
+                        Swal.fire("Changes are not saved", "", "info");
+                    }
+                });
+
+            } else {
+                alert(data.message);
+            }
+        }
+
+
+        function showdata_delete(data) {
+            console.log(data);
+            // alert("新增成功");
+            if (data.state) {
+                // alert(data.message);
+                Swal.fire({
+                    title: data.message,
+                    showDenyButton: false,
+                    showCancelButton: false,
+                    confirmButtonText: "確認",
+                    denyButtonText: `Don't save`
+                }).then((result) => {
+                    /* Read more about isConfirmed, isDenied below */
+                    if (result.isConfirmed) {
+                        Swal.fire("已刪除", "", "success").then(() => {
+                            location.href = "20240718 table.html";
+                        });
+                    } else if (result.isDenied) {
+                        Swal.fire("Changes are not saved", "", "info");
+                    }
+                });
+                // location.href = "20240718 table.html";
+            } else {
+                alert(data.message);
+            }
+        }
+
+
+        function showdata_check_uid(data) {
+            if (data.state) {
+
+
+                $("#s02_login_username").text(data.data.Username);
+                $("#s02_login_username").removeClass("d-none");
+                $("#logout_btn").removeClass("d-none");
+                $("#login_hint").hide();
+
+
+                $("#fa-user").removeClass("d-none");
+
+                $("#vip1").removeClass("disabled");
+                $("#vip2").removeClass("disabled");
+                $("#vip3").removeClass("disabled");
+                $("#vip4").removeClass("disabled");
+
+
+
+                //寫入uid
+
+                setCookie("uid01", data.data.Uid01, 30);
+
+            }
+        }
+
+        //引用用
+        function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>串接資料</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/myall.css">
+    <style>
+        .box {
+            height: 600px;
+            margin-top: 15px;
+            border: 2px solid var(--mycolor57);
+
+            box-shadow: 2px 2px 5px 5px var(--mycolor57);
+
+
+        }
+
+        .box_text .h4 {
+            padding: 5px;
+     
+        }
+        
+        .box_text .h4 {
+
+            font-size: medium ;
+
+        }
+
+        /* .ellipsis {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row" id="mydata">
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="box ">
+                    <div class="bg-cover"
+                        style="background-image: url(https://ezgo.ardswc.gov.tw/Uploads/opendata/TainmaMain01/APPLY_D/20151007173924.jpg); height: 180px;">
+                    </div>
+                    <div class="box_text">
+                        <div class="h4">店名</div>
+                        <div class="h4">電話</div>
+                        <div class="h4">地址</div>
+                        <div class="h4">簡介</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        $(function () {
+            console.log("hellow world");
+            var weight;
+            weight = 60;
+            height = 160;
+            console.log(weight);
+            console.log(height);
+
+            console.log("體重:" + weight + "公斤");
+            console.log("身高:" + height + "公分");
+
+            console.log(weight / ((height / 100) * (height / 100)));
+            // BMI = 體重(公斤) / 身高2(公尺2)
+            for (var i = 0; i < 9; i++) {
+                console.log(i);
+            };
+            $(function () {
+                $.ajax({
+                    type: "GET",
+                    url: "https://data.moa.gov.tw/Service/OpenData/ODwsv/ODwsvTravelFood.aspx?IsTransData=1&UnitId=193",
+                    dataType: "json",
+                    success: showdata,
+                    error: function () {
+                        console.log("error- https://data.moa.gov.tw/Service/OpenData/ODwsv/ODwsvTravelFood.aspx?IsTransData=1&UnitId=193")
+                    }
+
+                });
+            });
+
+        });
+
+        function showdata(data) {
+            // console.log(data);
+            // console.log(data[0]);
+            // console.log(data[0]["Name"]);
+            // console.log(data[0].Name);
+            // console.log(data[0].Address);
+            // for(var i=0;i<data.length;i++){
+            // var counter=i+1;
+            //     console.log(counter+"."+data[i].Name);
+            // };
+            // $("#mydata").append("123");
+            $("#mydata").empty();
+            for (var i = 0; i < data.length; i++) {
+                var counter = i + 1;
+                var Hword = data[i].HostWords.substring(0,30);
+                var strHTML = '<div class="col-sm-6 col-md-4 col-lg-3 mt-3"> <div class="box h-100"> <div class="bg-cover" style="background-image: url(' + data[i].PicURL + '); height: 180px;"> </div> <div class="box_text "> <div class="h4">' + counter + "." + data[i].Name + '</div> <div class="h4">' + "電話: " + data[i].Tel + '</div> <div class="h4">' + "地址: " + data[i].Address + '</div> <div class="h4 ellipsis">' + "簡介: " + Hword +"..."+ '</div> </div> </div> </div>'
+                $("#mydata").append(strHTML);
+            }
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>

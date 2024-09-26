@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODOS代辦事項工具</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/myall.css">
+    <style>
+        .completed{
+            text-decoration: line-through;
+            color: brown;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="app">
+        <div class="row my-3">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">待辦事項</span>
+                <input type="text" class="form-control" placeholder="請輸入待辦事項" v-model="newTodo" @keyup.enter="addTodo"><!--按下enter監聽-->
+                <button class="btn btn-outline-success" @click="addTodo">新增</button><!--按下按鈕監聽-->
+              </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <ul class="nav nav-pills">
+                            <li class="nav-item">
+                              <a class="nav-link" href="#" @click = "visibility='all'" :class="{'active' : visibility=='all'}">全部</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#" @click = "visibility='active'" :class="{'active' : visibility=='active'}">進行中</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#" @click = "visibility='completed'" :class="{'active' : visibility=='completed'}">已完成</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <li class="list-group-item" v-for="item in filterTodo">
+                                <div class="d-flex" v-if="item.id!=cacheItem.id">
+                                    <div class="form-check">
+                                        <input type="checkbox" name="" id="" class="form-check-input" v-model="item.completed">
+                                        <!--dblclick 雙擊double click-->
+                                        <label for="" class="form-check-label" :class="{'completed' : item.completed}"  @dblclick="editTodo(item)">{{item.title}}</label>
+                                    </div>
+                                    <button type="button" class="btn-close ms-auto" aria-label="Close" @click = "removeTodo(item)"></button>
+                                </div>
+                                <!--v-if根據條件來顯示或隱藏一個輸入框。-->
+                                <input type="text" class="form-control" 
+                                    v-if="item.id==cacheItem.id" 
+                                    v-model="cacheTitle" 
+                                    @keydown.enter="doneTodo(item)"
+                                    @keyup.esc="cancelTodo(item)"
+                                    >
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-footer d-flex">
+                        <span>還有{{countActive}}筆任務未完成</span>
+                        <a href="#" class="ms-auto" @click = "destory()">清除所有待辦事項</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const App={
+            data(){
+                return{
+                    newTodo:'',
+                    visibility:'all', // all  active  completed
+                    cacheTitle:'',
+                    cacheItem:[],
+                    todos:[
+                        {
+                            id:'001',
+                            title:'寫作業',
+                            completed:false,
+                        },
+                        {
+                            id:'002',
+                            title:'吃晚餐',
+                            completed:false,
+                        },
+                        {
+                            id:'003',
+                            title:'買消夜',
+                            completed:false,
+                        },
+                    ],
+                }
+            },//end of data
+            methods:{
+                addTodo(){
+                    const timestamp = Math.floor(Date.now()); //id
+                    const value = this.newTodo.trim();
+                    /*
+                        trim() 會移除字串起始及結尾處的空白字元
+                        當鍵入空白時就會變為空值
+                    */
+                    
+                    //如果為空值，則return直接跳過
+                    if(!value){
+                        return;
+                    }
+
+                    this.todos.push({
+                        id:timestamp,
+                        title:value,
+                        completed:false,
+                    })
+                    //清空輸入欄位
+                    this.newTodo='';
+
+                },//end of addTodo()
+
+                removeTodo(todo){
+                    //因很多程式都支援this，容易出錯，所以先將this指派給vm
+                    const vm = this;
+                    /*
+                        findIndex 遍歷 vm.todos 陣列中的每個元素，並且根據提供的條件函數返回第一個滿足條件的元素的索引
+                        item：當前遍歷到的陣列元素（vm.todos 中的每個待辦事項）。
+                        index：當前項目在陣列中的索引位置。
+                        todo.id == item.id 條件判斷式
+                    */
+                    newIndex = vm.todos.findIndex((item,index) => {
+                        return todo.id == item.id
+                    });
+                    /*
+                        splice刪除陣列中的元素->
+                        由newIndex開始，每次刪除1筆
+                    */
+                    vm.todos.splice(newIndex,1);
+
+                },//end of removeTodo()
+
+                editTodo(item){
+                    const vm = this;
+                    vm.cacheItem = item;
+                    vm.cacheTitle = item.title;
+                    
+                },//end of editTodo()
+
+                doneTodo(item){
+                    const vm = this;
+                    item.title = vm.cacheTitle;
+                    vm.cacheItem=[];
+                    vm.cacheTitle="";
+
+                },//end of doneTodo()
+                
+                cancelTodo(item){
+                    const vm = this;
+                    vm.cacheItem=[];
+                    vm.cacheTitle="";
+
+                },//end of cancelTodo()
+
+                destory(){
+                    if(confirm("真的要清除嗎")){
+                        this.todos=[];
+                    }
+                },//end of destory()
+
+            },//end of methods
+
+            computed:{
+
+                filterTodo(){
+                    const vm =this;
+                    if(vm.visibility =="all"){
+                        return vm.todos;
+                    }else if(vm.visibility=="active"){
+                        //挑選item.completed為false的物件
+                        const activeTodo=[] ;
+                        vm.todos.forEach((item,key)=>{
+                            if(!item.completed){
+                                activeTodo.push(item);
+                            }
+                        });
+                        return activeTodo;
+
+                    }else{
+                        const activeTodo=[] ;
+                        vm.todos.forEach((item,key)=>{
+                            if(item.completed){
+                                activeTodo.push(item);
+                            }
+                        });
+                        return activeTodo;
+                    }
+                },//end of filterTodo()
+
+                countActive(){
+                    //建立計數器
+                    let count = 0;
+                    const vm = this;
+                    vm.todos.forEach((item,key)=>{
+                        //若不為false = 若為true
+                        if(!item.completed){
+                            count++;
+                        }
+                    });
+                    return count;
+                }//end of filterTodo()
+
+            },//end of computed
+        }
+
+        //將App掛載在id為app的區塊裡，讓其可以使用data中的資料
+        //mount掛載
+        Vue.createApp(App).mount("#app")
+        
+    </script>
+</body>
+</html>

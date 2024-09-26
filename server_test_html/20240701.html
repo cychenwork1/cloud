@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch9通用類別</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/myall.css">
+    <style>
+        .box01 {
+            width: 100px;
+            height: 100px;
+            background-color: var(--mycolor10);
+        }
+
+        .box02 {
+            width: 150px;
+            height: 150px;
+            background-color: var(--mycolor10);
+            display: inline-block;
+        }
+
+        .demo01 {
+            width: 550px;
+            height: 550px;
+        }
+    </style>
+
+</head>
+
+<body class="">
+    <div class="container-fluid  mx-3">
+        <div class="display-2 fw-700">1.邊框border</div>
+        <div class="row bg-secondary p-3">
+            <div class="box01 m-1 border-5"></div>
+            <div class="box01 m-1 border-top"></div>
+            <div class="box01 m-1 border-bottom"></div>
+            <div class="box01 m-1 border-start"></div>
+            <div class="box01 m-1 border-end"></div>
+        </div>
+        <div class="display-2 fw-700">移除邊框</div>
+        <div class="row bg-secondary p-3">
+            <div class="box01 m-1 border border-5"></div>
+            <div class="box01 m-1 border border-5 border-0"></div>
+            <div class="box01 m-1 border border-5 border-top-0"></div>
+            <div class="box01 m-1 border border-5 border-bottom-0"></div>
+            <div class="box01 m-1 border border-5 border-start-0"></div>
+            <div class="box01 m-1 border border-5 border-end-0"></div>
+        </div>
+        <div class="display-2 fw-700">邊框顏色</div>
+        <div class="row bg-secondary p-3">
+            <div class="box01 m-1 border border-5 border-primary"></div>
+            <div class="box01 m-1 border border-5 border-success"></div>
+            <div class="box01 m-1 border border-5 border-info"></div>
+            <div class="box01 m-1 border border-5 border-warning"></div>
+            <div class="box01 m-1 border border-5 border-danger"></div>
+            <div class="box01 m-1 border border-5 border-light"></div>
+        </div>
+        <div class="display-2 fw-700">圓角</div>
+        <div class="row bg-secondary p-3">
+            <div class="box01 m-1 border border-5 border-primary rounded"></div>
+            <div class="box01 m-1 border border-5 border-success rounded-top"></div>
+            <div class="box01 m-1 border border-5 border-info rounded-bottom"></div>
+            <div class="box01 m-1 border border-5 border-warning rounded-start"></div>
+            <div class="box01 m-1 border border-5 border-danger rounded-end"></div>
+            <div class="box01 m-1 border border-5 border-light rounded-circle"></div>
+        </div>
+        <div class="display-2 fw-700">2.文字背景色</div>
+        <div class="row bg-secondary p-3 ">
+            <div class="text-bg-primary p-3 h4 fw-700">文字背景色</div>
+            <div class="text-bg-info p-3 h4 fw-700">文字背景色</div>
+            <div class="text-bg-success p-3 h4 fw-700">文字背景色</div>
+            <div class="text-bg-warning p-3 h4 fw-700">文字背景色</div>
+        </div>
+        <div class="display-2 fw-700">3.display</div>
+
+        <div class="py-3 bg-danger w-50">
+            <div class="p-2 text-bg-warning d-inline">display: inline</div>
+        </div>
+        <div class="py-3 bg-danger w-50">
+            <span class="p-2 text-bg-warning d-block">display: block</span>
+        </div>
+        <div class="display-4 fw-700"></div>
+        <div class=" py-3 bg-info">
+            <span class="d-none d-md-block  w-50">行動隱藏桌面顯示</span>
+        </div>
+
+
+        <div class="display-4 fw-700">5.overflow</div>
+        <div class="box02">
+            號碼也想麻煩交易時間你有事項詳細她的電子字幕，地理同時，高級處罰深刻股份有限公司後來請大家分公司變得合適騎士，走出部門命令審批下來家人服裝一切同時即可，案例時刻交通標題回覆幽默選擇方面奧客，落實予以，如此成功會有，部門頭髮發生說過上一頁，用戶名毫無禁止語。
+        </div>
+        <div class="box02 overflow-auto">
+            號碼也想麻煩交易時間你有事項詳細她的電子字幕，地理同時，高級處罰深刻股份有限公司後來請大家分公司變得合適騎士，走出部門命令審批下來家人服裝一切同時即可，案例時刻交通標題回覆幽默選擇方面奧客，落實予以，如此成功會有，部門頭髮發生說過上一頁，用戶名毫無禁止語。
+        </div>
+        <div class="box02 overflow-visible">
+            號碼也想麻煩交易時間你有事項詳細她的電子字幕，地理同時，高級處罰深刻股份有限公司後來請大家分公司變得合適騎士，走出部門命令審批下來家人服裝一切同時即可，案例時刻交通標題回覆幽默選擇方面奧客，落實予以，如此成功會有，部門頭髮發生說過上一頁，用戶名毫無禁止語。
+        </div>
+        <div class="box02 overflow-hidden">
+            號碼也想麻煩交易時間你有事項詳細她的電子字幕，地理同時，高級處罰深刻股份有限公司後來請大家分公司變得合適騎士，走出部門命令審批下來家人服裝一切同時即可，案例時刻交通標題回覆幽默選擇方面奧客，落實予以，如此成功會有，部門頭髮發生說過上一頁，用戶名毫無禁止語。
+        </div>
+        <div class="box02 overflow-scroll">
+            號碼也想麻煩交易時間你有事項詳細她的電子字幕，地理同時，高級處罰深刻股份有限公司後來請大家分公司變得合適騎士，走出部門命令審批下來家人服裝一切同時即可，案例時刻交通標題回覆幽默選擇方面奧客，落實予以，如此成功會有，部門頭髮發生說過上一頁，用戶名毫無禁止語。
+        </div>
+
+        <div class="display-4 fw-700">練習:選單</div>
+        <div class="bg-secondary py-2 w-25 sticky-top fixed-bottom fixed-top">
+            <ul class="list-unstyled d-flex justify-content-between flex-nowrap overflow-auto">
+                <li class="text-bg-warning p-2 text-nowrap">首頁選單</li>
+                <li class="text-bg-warning p-2 text-nowrap">熱門選單</li>
+                <li class="text-bg-warning p-2 text-nowrap">體育選單</li>
+                <li class="text-bg-warning p-2 text-nowrap">娛樂選單</li>
+                <li class="text-bg-warning p-2 text-nowrap">購物選單</li>
+                <li class="text-bg-warning p-2 text-nowrap">體育選單</li>
+                <li class="text-bg-warning p-2 text-nowrap">娛樂選單</li>
+                <li class="text-bg-warning p-2 text-nowrap">購物選單</li>
+
+            </ul>
+        </div>
+
+        <div class="display-4 fw-700">6.position</div>
+        <div class="demo01 border border-5 border-danger position-relative">
+            <div class="box01 position-absolute top-0 start-0 "></div>
+            <div class="box01 position-absolute top-0 start-50 "></div>
+            <div class="box01 position-absolute top-0 start-100 "></div>
+
+            <div class="box01 position-absolute top-50 start-0 "></div>
+            <div class="box01 position-absolute top-50 start-50 "></div>
+            <div class="box01 position-absolute top-50 start-100 "></div>
+
+            <div class="box01 position-absolute top-100 start-0 "></div>
+            <div class="box01 position-absolute top-100 start-50 "></div>
+            <div class="box01 position-absolute top-100 start-100 "></div>
+        </div>
+        <br><br><br><br><br><br>
+        <div class="display-4 fw-700">translate-middle排版</div>
+        <br><br><br>
+        <div class="demo01 border border-5 border-danger position-relative">
+            <div class="box01 position-absolute top-0 start-0 translate-middle"></div>
+            <div class="box01 position-absolute top-0 start-50 translate-middle"></div>
+            <div class="box01 position-absolute top-0 start-100 translate-middle"></div>
+
+            <div class="box01 position-absolute top-50 start-0 translate-middle"></div>
+            <div class="box01 position-absolute top-50 start-50 translate-middle"></div>
+            <div class="box01 position-absolute top-50 start-100 translate-middle"></div>
+
+            <div class="box01 position-absolute top-100 start-0 translate-middle"></div>
+            <div class="box01 position-absolute top-100 start-50 translate-middle"></div>
+            <div class="box01 position-absolute top-100 start-100 translate-middle"></div>
+        </div>
+
+        <br><br><br><br><br><br>
+        <div class="display-4 fw-700">translate-middle排版2</div>
+        <br><br><br>
+        <div class="demo01 border border-5 border-danger position-relative">
+            <div class="box01 position-absolute top-0 start-0 "></div>
+            <div class="box01 position-absolute top-0 start-50 translate-middle-x"></div>
+            <div class="box01 position-absolute top-0 end-0"></div>
+
+            <div class="box01 position-absolute top-50 start-0 translate-middle-y"></div>
+            <div class="box01 position-absolute top-50 start-50 translate-middle"></div>
+            <div class="box01 position-absolute top-50 end-0 translate-middle-y"></div>
+
+            <div class="box01 position-absolute bottom-0 start-0 "></div>
+            <div class="box01 position-absolute bottom-0 start-50 translate-middle-x"></div>
+            <div class="box01 position-absolute bottom-0 end-0 "></div>
+        </div>
+
+        <br><br><br><br><br><br>
+        <div class="display-4 fw-700">translate-middle排版test</div>
+        <br><br><br>
+        <div class="demo01 border border-5 border-danger position-relative">
+            <div class="box01 position-absolute top-0 start-0 "></div>
+            <div class="box01 position-absolute top-0 start-50 translate-middle-x"></div>
+            <div class="box01 position-absolute top-0 end-0"></div>
+
+            <div class="box01 position-absolute top-50 start-0 translate-middle-y"></div>
+            <div class="box01 position-absolute top-50 start-50 translate-middle"></div>
+            <div class="box01 position-absolute top-50 end-0 translate-middle-y"></div>
+
+            <div class="box01 position-absolute bottom-0 start-0 "></div>
+            <div class="box01 position-absolute bottom-0 start-50 translate-middle-x"></div>
+            <div class="box01 position-absolute bottom-0 end-0 "></div>
+        </div>
+
+        <br><br><br><br><br><br>
+        <div class="display-4 fw-700">position範例</div>
+        <button class="btn btn-primary position-relative">未讀訊息<span class=" text-bg-danger 
+            fw-700 rounded-circle p-1 position-absolute top-0 start-100 translate-middle">99+</span></button>
+        &nbsp; &nbsp;
+        <button type="button" class="btn btn-primary position-relative">
+            Mails <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">+99
+                <span class="visually-hidden">unread messages</span></span>
+        </button>
+        &nbsp; &nbsp;
+        <button type="button" class="btn btn-dark position-relative">
+            Marker <svg width="1em" height="1em" viewBox="0 0 16 16"
+                class="position-absolute top-100 start-50 translate-middle mt-1" fill="#212529"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+            </svg>
+        </button>
+        &nbsp; &nbsp;
+        <button type="button" class="btn btn-primary position-relative">
+            Alerts <span
+                class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-2"><span
+                    class="visually-hidden">unread messages</span></span>
+        </button>
+
+        <div class="display-4 fw-700">pogress範例</div>
+        <div class="position-relative">
+            <div class="progress" style="height: 5px;">
+                <div class="progress-bar" style="width: 50%; background-color: #961396"></div>
+            </div>
+            <div class="btn btn-sm btn-primary rounded-circle position-absolute top-0 start-0 translate-middle"
+                style="height: 32px;width: 32px;">1</div>
+            <div class="btn btn-sm btn-success rounded-circle position-absolute top-0 start-50 translate-middle"
+                style="height: 32px;width: 32px;">2</div>
+            <div class="btn btn-sm btn-warning rounded-circle position-absolute top-0 start-100 translate-middle"
+                style="height: 32px;width: 32px;">3</div>
+        </div>
+
+
+        <div class="display-4 fw-700">pogress範例2</div>
+        <div class="position-relative">
+            <div class="progress" style="height: 5px;">
+                <div class="progress-bar" style="width: 50%; background-color: #961396"></div>
+            </div>
+            <div class="btn btn-sm btn-primary rounded-circle position-absolute top-0 start-0 translate-middle"
+                style="height: 32px;width: 32px;">1</div>
+            <div class="btn btn-sm btn-success rounded-circle position-absolute top-0 start-50 translate-middle"
+                style="height: 32px;width: 32px;">2</div>
+            <div class="btn btn-sm btn-warning rounded-circle position-absolute top-0 start-100 translate-middle"
+                style="height: 32px;width: 32px;">3</div>
+            <div class="btn btn-sm btn-warning rounded-circle position-absolute top-0 start-100 translate-middle"
+                style="height: 32px;width: 32px;">4</div>
+            <div class="btn btn-sm btn-warning rounded-circle position-absolute top-0 start-100 translate-middle"
+                style="height: 32px;width: 32px;">5</div>
+        </div>
+
+        <div class="display-4 fw-700"></div>
+
+        <div class="display-4 fw-700">7.shadow</div>
+        <div class="p3 bg-light mb-5 shadow ">力量此處上門發行標題看起來，太多委員會。</div>
+        <div class="p3 bg-light mb-5 shadow-none ">力量此處上門發行標題看起來，太多委員會。</div>
+        <div class="p3 bg-light mb-5 shadow-lg ">力量此處上門發行標題看起來，太多委員會。</div>
+        <div class="p3 bg-light mb-5 shadow-sm ">力量此處上門發行標題看起來，太多委員會。</div>
+
+        <div class="display-4 fw-700">8.sizing</div>
+        <div class="bg-secondary border w-25 p-3">w-25</div>
+        <div class="bg-secondary border w-50 p-3">w-50</div>
+        <div class="bg-secondary border w-75 p-3">w-75</div>
+        <div class="bg-secondary border w-100 p-3">w-100</div>
+
+        <div class="bg-success" style="height: 300px;">
+            <div class="h-25 bg-warning d-inline-block" style="width: 100px;">h-25</div>
+            <div class="h-50 bg-warning d-inline-block" style="width: 100px;">h-50</div>
+            <div class="h-75 bg-warning d-inline-block" style="width: 100px;">h-75</div>
+            <div class="h-100 bg-warning d-inline-block" style="width: 100px;">h-100</div>
+        </div>
+
+
+        <div class="bg-info vh-100">
+            <div class="display-1 fw-700"> vh-100 </div>
+        </div>
+
+        <div class="display-4 fw-700">9.visible, invidible vs d-block,d-none</div>
+        <!-- visible還佔位置 -->
+        <div>
+            <div class="box02 bg-warning d-none">01</div>
+            <div class="box02 bg-secondary">02</div>
+            <div class="box02 bg-success">03</div>
+
+        </div>
+
+        <div class="display-4 fw-700">10.color link</div>
+        <div>
+            <a href="#" class="link-danger">color link</a>
+        </div>
+        <div>
+            <a href="#" class="link-warning">color link</a>
+        </div>
+        <div>
+            <a href="#" class="link-success">color link</a>
+        </div>
+        <div>
+            <a href="#" class="link-dark">color link</a>
+        </div>
+
+
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

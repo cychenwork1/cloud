@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/myall.css">
+    <style>
+        .box {
+            height: 600px;
+            margin-top: 15px;
+            border: 2px solid var(--mycolor57);
+
+            box-shadow: 2px 2px 5px 5px var(--mycolor57);
+
+
+        }
+
+        .box_text .h4 {
+            padding: 5px;
+
+        }
+
+        .box_text .h4 {
+
+            font-size: medium;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row" id="mydata">
+            <div class="col-sm-6  col-md-4 col-lg-3 ">
+                <div class="box  ">
+                    <div class="bg-cover"
+                        style="background-image: url(https://ezgo.ardswc.gov.tw/Uploads/opendata/TainmaMain01/APPLY_D/20151007173924.jpg); height: 180px;">
+                    </div>
+                    <div class="box_text  d-flex flex-column bg-info" style=" height: 420px;">
+                        <div class="h4">店名</div>
+                        <div class="h4">電話</div>
+                        <div class="h4">地址</div>
+                        <div class="h4">簡介</div>
+                        <a href="#" class="btn btn-primary mt-auto">查看更多</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- '+ item.Name +' -->
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(function () {
+            $.ajax({
+                type: "GET",
+                url: "js/hotel_C_f.json",
+                dataType: "json",
+                success: showdata,
+                error: function () {
+                    console.log("error");
+                }
+            });
+        });
+
+        function showdata(data) {
+            // $("#mydata").empty();
+            // console.log(data);
+            var hotelData = data.XML_Head.Infos.Info;
+            // for (var i = 0; i < data.length; i++) {
+            //     $("#mydata").append(hotelData);
+            // }
+
+            hotelData.forEach(function (item) {
+                var Desc=item.Description.substring(0, 50);
+                if (item.Picture1 == "") {
+                    item.Picture1 = "image/alexander-schimmeck-39R-s_81wE0-unsplash.jpg";
+                }
+                var strHTML = '<div class="col-sm-6 col-md-4 col-lg-3"> <div class="box "> <div class="bg-cover" style="background-image: url(' + item.Picture1 + '); height: 180px;"> </div> <div class="box_text  d-flex flex-column bg-info" style=" height: 420px;"> <div class="h4">' + "旅館名: " + item.Name + '</div> <div class="h4">' + "電話: " + item.Tel + '</div> <div class="h4">' + "地址: " + item.Add + '</div> <div class="h4">' + item.Parkinginfo + '</div> <a href="#" class="btn btn-primary mt-auto">查看更多</a></div> </div> </div>';
+                if (item.Region == "臺中市" && item.Town == "西屯區") {
+                        console.log(item.Name);
+                        $("#mydata").append(strHTML);
+                }
+            });
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+
+
+    <section id="s02" class="bg-dark">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+                <div class="container-fluid">
+                    <i class="fa-solid fa-plane fa-2x  me-2" style="color: #19b3b1;"></i>
+                    <a class="navbar-brand" href="#">
+
+                        xx旅遊公司
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">首頁</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#s03">關於我們</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    高級vip功能
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item disabled" href="20240718 product.html" id="vip1"
+                                            target="_blank">產品建檔</a></li>
+                                    <li><a class="dropdown-item disabled" href="20240820 member control panel.html"
+                                            id="vip2" target="_blank">會員管理</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item disabled" href="#" id="vip3">vip功能3</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+
+                        <div>
+
+                            <i class="fa-solid fa-user fa-2x d-none" style="color: rgb(82, 82, 82)" id="fa-user"></i>
+                            <span class="h3 text-success " id="login_hint">會員未登入 </span>
+                            <span class="h3 text-warning d-none" id="s02_login_username"> xxx</span>
+                            <button class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#loginModal"
+                                id="login_btn">登入</button>
+                            <button class="btn btn-success d-none btn-danger" id="logout_btn">登出</button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </section>
+
+
+
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/sweetalert2@11.js"></script>
+    <script>
+        $(document).ready(function () {
+            if (getCookie("uid01") != "") {
+                var dataJSON = {};
+                dataJSON["uid01"] = getCookie("uid01");
+
+                console.log(JSON.stringify(dataJSON));
+
+                $.ajax({
+                    type: "POST",
+                    url: "member-login-check-uid01-api.php",
+                    data: JSON.stringify(dataJSON),
+                    dataType: "json",
+                    success: showdata_check_uid,
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        console.log(xhr.status);
+                        console.log(thrownError);
+                    }
+                });
+            } else {
+                console.log("無cookie");
+                Swal.fire({
+                    title: '請登入以使用',
+                    icon: 'warning',
+                    confirmButtonText: '確定'
+                }).then(function () {
+                    location.href = "20240730 hotel.html"; // 跳轉到登入頁面或其他指定頁面
+                });
+            }
+
+            $("#logout_btn").click(function () {
+                    setCookie("uid01", "", -1);
+                    sessionStorage.setItem("logout", "true");
+                    location.reload();
+
+                });
+
+                if (sessionStorage.getItem("logout") === "true") {
+                    sessionStorage.removeItem("logout"); // 顯示訊息後清除標記
+                    Swal.fire("已登出"); // 顯示已登出訊息
+                    $("#s02_login_username").text(會員未登入);
+                    $("#login_hint").show();
+
+
+                    $("#s02_login_username").addClass("d-none");
+                    $("#logout_btn").addClass("d-none");
+                    $("#fa-user").addClass("d-none");
+
+                }
+        });
+        //引用用
+        function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+    </script>
+</body>
+
+</html>

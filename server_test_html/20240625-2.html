@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch08練習2</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/myall.css">
+    <style>
+        .box001{
+            position: relative;
+            overflow: hidden;
+            /* width: 100%;
+            height: auto; */
+        }
+        .box001:hover .roller{
+            top:0%;
+            transition: 800ms;
+        }
+        .roller{
+            position: absolute;
+            left: 0%;
+            top: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.5);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            color: wheat;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 bg-cover"
+                style="background-image:url(image/alexander-schimmeck-39R-s_81wE0-unsplash.jpg) ;height: 200px;"></div>
+            <div class="col-md-4 bg-cover"
+                style="background-image:url(image/annie-spratt-AFB6S2kibuk-unsplash.jpg) ;height: 200px;"></div>
+            <div class="col-md-4 bg-cover"
+                style="background-image:url(image/artem-beliaikin-49mCO5ZRQDk-unsplash.jpg) ;height: 200px;"></div>
+        </div>
+        <div class="row vh-100 bg-info">
+            <div class="col-md-3 bg-warning">
+                <div class="d-flex flex-column h-100 row">
+                    <div class=" bg-cover"
+                        style="background-image:url(image/artem-beliaikin-49mCO5ZRQDk-unsplash.jpg) ;height: 33.3vh">
+                    </div>
+                    <div class=" bg-cover"
+                        style="background-image:url(image/artem-beliaikin-49mCO5ZRQDk-unsplash.jpg) ;height: 33.3vh">
+                    </div>
+                    <div class=" bg-cover"
+                        style="background-image:url(image/artem-beliaikin-49mCO5ZRQDk-unsplash.jpg) ;height: 33.4vh">
+                    </div>
+                </div>
+            </div>
+
+                <div class="col-md-6 bg-secondary box001"
+                    style="background-image:url(image/alexander-schimmeck-39R-s_81wE0-unsplash.jpg) ;">
+                    <div class="roller">
+                        <button href="#" target="_blank" class="btn bg-btn03">連結</a>
+                    </div>
+                </div>
+
+            <div class="col-md-3 bg-warning">
+                <div class="d-flex flex-column h-100 row">
+                    <div class="h-50 bg-cover"
+                        style="background-image:url(image/artem-beliaikin-49mCO5ZRQDk-unsplash.jpg) ;"></div>
+                    <div class="h-50 bg-cover"
+                        style="background-image:url(image/artem-beliaikin-49mCO5ZRQDk-unsplash.jpg) ;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 bg-cover"
+                style="background-image:url(image/alexander-schimmeck-39R-s_81wE0-unsplash.jpg) ;height: 200px;"></div>
+            <div class="col-md-3 bg-cover"
+                style="background-image:url(image/annie-spratt-AFB6S2kibuk-unsplash.jpg) ;height: 200px;"></div>
+            <div class="col-md-3 bg-cover"
+                style="background-image:url(image/artem-beliaikin-49mCO5ZRQDk-unsplash.jpg) ;height: 200px;"></div>
+            <div class="col-md-3 bg-cover"
+                style="background-image:url(image/alexander-schimmeck-39R-s_81wE0-unsplash.jpg) ;height: 200px;"></div>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

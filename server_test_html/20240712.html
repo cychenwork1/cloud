@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/myall.css">
+</head>
+
+<body>
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header text-bg-warning">
+                        <div class="h2 fw-700 text-center">便當訂購</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">產品名稱</label>
+                                    <input type="text" class="form-control" list="foodlist" id="p_name" name="p_name"
+                                        placeholder="字數限制3-10">
+                                    <datalist id="foodlist">
+                                        <option value="炸雞腿便當"></option>
+                                        <option value="炸雞排便當"></option>
+                                        <option value="滷排骨便當"></option>
+                                        <option value="燒肉便當"></option>
+                                        <option value="香腸便當"></option>
+                                    </datalist>
+                                    <div class="valid-feedback">輸入符合規定</div>
+                                    <div class="invalid-feedback">輸入不符合規定</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="" class="form-label">店家名稱</label>
+                                    <input type="text" class="form-control" list="" id="s_name" name="s_name"
+                                        placeholder="字數限制3-8">
+                                    <div class="valid-feedback">輸入符合規定</div>
+                                    <div class="invalid-feedback">輸入不符合規定</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="" class="form-label">店家地址</label>
+                                    <input type="text" class="form-control" list="" id="s_addr" name="s_addr"
+                                        placeholder="不得為空白">
+                                    <div class="valid-feedback">輸入符合規定</div>
+                                    <div class="invalid-feedback">輸入不符合規定</div>
+                                </div>
+                                <div class="mb-3">
+                                    <select name="maindish" id="maindish" class="form-select">
+                                        <option value="" selected disabled>---加點主菜---</option>
+                                        <option value="炸雞腿">炸雞腿</option>
+                                        <option value="炸雞排">炸雞排</option>
+                                        <option value="滷排骨">滷排骨</option>
+                                        <option value="燒肉">燒肉</option>
+                                        <option value="香腸">香腸</option>
+                                        <option value="不需加點">不需加點</option>
+                                    </select>
+                                    <div class="valid-feedback">已選擇加點</div>
+                                    <div class="invalid-feedback">未選擇加點</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="" class="form-label">單點配料</label>
+                                    <div name="" id="" class="form-check">
+                                        <input type="checkbox" name="check01" id="" class="form-check-input" value="飲料">
+                                        <label for="" class="form-check-label">飲料</label>
+                                    </div>
+                                    <div name="" id="" class="form-check">
+                                        <input type="checkbox" name="check01" id="" class="form-check-input" value="湯">
+                                        <label for="" class="form-check-label">湯</label>
+                                    </div>
+                                    <div name="" id="" class="form-check">
+                                        <input type="checkbox" name="check01" id="" class="form-check-input" value="餐具">
+                                        <label for="" class="form-check-label">餐具</label>
+                                    </div>
+                                    <div name="" id="" class="form-check">
+                                        <input type="checkbox" name="check01" id="" class="form-check-input" value="滷蛋">
+                                        <label for="" class="form-check-label">滷蛋</label>
+                                    </div>
+                                    <div name="" id="" class="form-check">
+                                        <input type="checkbox" name="check01" id="" class="form-check-input"
+                                            value="油豆腐">
+                                        <label for="" class="form-check-label">油豆腐</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="rad_pay" id="rad_pay_cash" class="form-check-input"
+                                        value="現金">
+                                    <label for="rad_pay_cash">現金</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="rad_pay" id="rad_pay_creditcard" class="form-check-input"
+                                        value="刷卡">
+                                    <label for="rad_pay_creditcard">刷卡</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="rad_pay" id="rad_pay_linepay" class="form-check-input"
+                                        value="line pay">
+                                    <label for="rad_pay_linepay">line pay</label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="form-check form-switch">
+                                    <input type="checkbox" name="bag" id="bag" class="form-check-input" value="">
+                                    <label for="bag">是否需購物袋</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <label for="">數量: <span id="num" class="text-danger h3 fw-700">0</span> 個</label>
+                                <input type="range" class="form-range" min="0" max="50" step="1" name="p_num" id="p_num"
+                                    value="0">
+                            </div>
+
+                            <div class="mb-3">
+                                <div class="form-check ">
+                                    <input type="checkbox" name="confirm" id="confirm" class="form-check-input"
+                                        value="">
+                                    <label for="confirm">遵守誠信原則</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer text-end">
+                        <button class="btn btn-secondary">取消</button>
+                        <button class="btn btn-primary" id="ok_btn">確定</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header text-bg-success">
+                        <h3 class="text-center">訂購明細</h3>
+                    </div>
+                    <div class="card-body" id="showlist">
+                        <div class="card-text">產品名稱:xxx</div>
+                        <div class="card-text">店家名稱:xxx</div>
+                        <div class="card-text">店家地址:xxx</div>
+                        <div class="card-text">單點主菜:xxx</div>
+                        <div class="card-text">附加項:xxx</div>
+                        <div class="card-text">付款方式:xxx</div>
+                        <div class="card-text">購物袋:xxx</div>
+                        <div class="card-text">數量:xxx</div>
+                        <div class="card-text">是否已遵守誠信原則</div>
+                    </div>
+
+                    <div class="card-footer"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+
+        var flag_p_name = false;
+        var flag_s_name = false;
+        var flag_s_addr = false;
+        var flag_maindish = false;
+        var flag_payment = false;
+        var flag_bag = false;
+        var flag_num = false;
+        var flag_confirm = false;
+
+        var bag;
+        var confirm_word;
+
+        $(function () {
+            $("#p_name").bind("input propertychange", function () {
+                console.log($(this).val().length);
+                if ($(this).val().length > 2 && $(this).val().length < 11) {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_p_name = true;
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_p_name = false;
+
+                }
+
+            });
+            $("#s_name").bind("input propertychange", function () {
+                console.log($(this).val().length);
+                if ($(this).val().length > 2 && $(this).val().length < 9) {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_s_name = true;
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_s_name = false;
+
+                }
+
+            });
+
+            $("#s_addr").bind("input propertychange", function () {
+                console.log($(this).val().length);
+                if ($(this).val().length != 0) {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_s_addr = true;
+
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_s_addr = false;
+
+                }
+
+            });
+            $("#maindish").change(function () {
+                if ($(this).val() != "") {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_maindish = true;
+                }
+
+            });
+
+
+
+            //數量
+            $("#p_num").bind("input propertychange", function () {
+
+                // console.log($(this).val() );
+                $("#num").html($(this).val());
+                flag_num = true;
+            });
+
+            // $("input[name='p_num']").change(function () {
+            //     flag_num = true;
+            // });
+
+            $("#bag").change(function () {
+                if ($(this).is(":checked")) {
+                    $(this).next().html('<span class="text-primary">需要購物袋</span>');
+                    bag = "需要購物袋";
+                } else {
+                    $(this).next().html('<span class="text-danger">不需要購物袋</span>');
+                    bag = "不需要購物袋";
+                }
+                flag_bag = true;
+
+
+            });
+
+
+
+
+            $("input[name='rad_pay']").change(function () {
+                if ($(this).is(":checked")) {
+                    flag_payment = true;
+                }
+            });
+
+            $("#confirm").change(function () {
+                if ($(this).is(":checked")) {
+                    flag_confirm = true;
+                    confirm_word = "已確認條款"
+                } else {
+                    flag_confirm = false;
+                }
+
+            });
+
+
+
+
+            $("#ok_btn").click(function () {
+                console.log("flag_p_name " + flag_p_name);
+                console.log("flag_s_name " + flag_s_name);
+                console.log("flag_s_addr " + flag_s_addr);
+                console.log("flag_maindish " + flag_maindish);
+                console.log("flag_payment " + flag_payment);
+                console.log("flag_bag " + flag_bag);
+                console.log("flag_num " + flag_num);
+                console.log("flag_confirm " + flag_confirm);
+                if (flag_p_name && flag_s_name && flag_s_addr && flag_maindish && flag_payment && flag_bag && flag_num && flag_confirm == true) {
+
+
+                    $("#showlist").empty();
+
+
+                    var chkArray = [];
+                    $.each($("input[name='check01']:checked"), function () {
+                        chkArray.push($(this).val());
+                    });
+
+                    console.log(chkArray.join(", "));
+                    if (chkArray.length == 0) {
+                        chkArray.push("無附加");
+                    }
+
+                    var payment;
+
+                    $.each($('input[name="rad_pay"]:checked'), function () {
+                        payment = $(this).val();
+
+                    });
+
+                    // var strHTML2 = '<div class="card-text">產品名稱:' + $("#p_name").val() + '</div><div class="card-text">產品數量:' + $("#p_num").val() + '</div><div class="card-text">電話:09' + $("#tel").val() + '</div></div><div class="card-text">冰塊:' + $("#ice").val() + '</div></div><div class="card-text">配料:' + chkArray.join(", ") + '</div></div><div class="card-text">付款方式:' + payment + '</div></div><div class="card-text">外送狀態:' + switch01 + '</div>';
+
+
+
+                    var strHTML = '<div class="card-text">產品名稱:' + $("#p_name").val() + '</div> <div class="card-text">店家名稱:' + $("#s_name").val() + '</div> <div class="card-text">店家地址:' + $("#s_addr").val() + '</div> <div class="card-text">單點主菜:' + $("#maindish").val() + '</div> <div class="card-text">附加項:' + chkArray.join(", ") + '</div> <div class="card-text">付款方式:' + payment + '</div> <div class="card-text">購物袋:' + bag + '</div> <div class="card-text">數量:' + $("#p_num").val() + '</div> <div class="card-text">' + confirm_word + '</div>'
+                    $("#showlist").html(strHTML);
+                } else {
+                    alert("欄位有錯，請修正!");
+                }
+
+            });
+        });
+    </script>
+</body>
+
+</html>
